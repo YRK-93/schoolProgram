@@ -46,39 +46,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppConstants.cs" />
-    <Compile Include="AppStatistic.cs" />
-    <Compile Include="Companion.cs" />
-    <Compile Include="ExerciseGenerator.cs" />
-    <Compile Include="Initializator.cs" />
-    <Compile Include="MathPlus.cs">
+    <Compile Include="Classes\AppConstants.cs" />
+    <Compile Include="Classes\AppStatistic.cs" />
+    <Compile Include="Classes\Companion.cs" />
+    <Compile Include="Classes\ExerciseGenerator.cs" />
+    <Compile Include="Classes\Initializator.cs" />
+    <Compile Include="Forms\MathPlus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MathPlus.Designer.cs">
+    <Compile Include="Forms\MathPlus.Designer.cs">
       <DependentUpon>MathPlus.cs</DependentUpon>
     </Compile>
-    <Compile Include="MathSelectMode.cs">
+    <Compile Include="Forms\MathSelectMode.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MathSelectMode.Designer.cs">
+    <Compile Include="Forms\MathSelectMode.Designer.cs">
       <DependentUpon>MathSelectMode.cs</DependentUpon>
     </Compile>
-    <Compile Include="PicButton.cs" />
-    <Compile Include="MainForm.cs">
+    <Compile Include="Classes\PicButton.cs" />
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MathPlus.resx">
+    <EmbeddedResource Include="Forms\MathPlus.resx">
       <DependentUpon>MathPlus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MathSelectMode.resx">
+    <EmbeddedResource Include="Forms\MathSelectMode.resx">
       <DependentUpon>MathSelectMode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -100,9 +100,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\res\main_menu\mButton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
