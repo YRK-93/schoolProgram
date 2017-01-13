@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mathPlusBackground = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MathPlus));
             this.btn0 = new System.Windows.Forms.Button();
             this.btn1 = new System.Windows.Forms.Button();
             this.btn2 = new System.Windows.Forms.Button();
@@ -44,16 +44,8 @@
             this.btnErase = new System.Windows.Forms.Button();
             this.btnPigCompanion = new System.Windows.Forms.Button();
             this.btnToolTip = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.mathPlusBackground)).BeginInit();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // mathPlusBackground
-            // 
-            this.mathPlusBackground.Location = new System.Drawing.Point(12, 21);
-            this.mathPlusBackground.Name = "mathPlusBackground";
-            this.mathPlusBackground.Size = new System.Drawing.Size(460, 276);
-            this.mathPlusBackground.TabIndex = 0;
-            this.mathPlusBackground.TabStop = false;
             // 
             // btn0
             // 
@@ -209,11 +201,21 @@
             this.btnToolTip.UseVisualStyleBackColor = true;
             this.btnToolTip.Visible = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(172, 69);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(288, 20);
+            this.textBox1.TabIndex = 15;
+            // 
             // MathPlus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 645);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnToolTip);
             this.Controls.Add(this.btnPigCompanion);
             this.Controls.Add(this.btnErase);
@@ -229,20 +231,23 @@
             this.Controls.Add(this.btn2);
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn0);
-            this.Controls.Add(this.mathPlusBackground);
+            this.DoubleBuffered = true;
+            this.MaximizeBox = false;
             this.Name = "MathPlus";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MathPlus";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MathPlus_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MathPlus_KeyUp);
             this.Resize += new System.EventHandler(this.MathPlus_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.mathPlusBackground)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox mathPlusBackground;
         private System.Windows.Forms.Button btn0;
         private System.Windows.Forms.Button btn1;
         private System.Windows.Forms.Button btn2;
@@ -258,5 +263,6 @@
         private System.Windows.Forms.Button btnErase;
         private System.Windows.Forms.Button btnPigCompanion;
         private System.Windows.Forms.Button btnToolTip;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

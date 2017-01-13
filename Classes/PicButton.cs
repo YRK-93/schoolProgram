@@ -65,7 +65,7 @@ namespace SHKOLA
             pButton.TabStop = false;
             pButton.FlatStyle = FlatStyle.Flat;
             pButton.FlatAppearance.BorderSize = 0;
-            pButton.BackgroundImage = ImagesStore.GetImage(imgOnStart);
+            pButton.BackgroundImage = ImagesStore.GetImage(imgOnStart, Color.Transparent);
             pButton.BackgroundImageLayout = ImageLayout.Stretch;
             pButton.Text = "";
         }
@@ -80,7 +80,7 @@ namespace SHKOLA
             pButton.TabStop = false;
             pButton.FlatStyle = FlatStyle.Flat;
             pButton.FlatAppearance.BorderSize = 0;
-            pButton.BackgroundImage = ImagesStore.GetTransparentImage(imgOnStart, transpColor);
+            pButton.BackgroundImage = ImagesStore.GetImage(imgOnStart, transpColor);
             pButton.BackgroundImageLayout = ImageLayout.Stretch;
             pButton.Text = "";
         }

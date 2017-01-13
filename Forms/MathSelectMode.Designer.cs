@@ -28,22 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.mathModeBackground = new System.Windows.Forms.PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MathSelectMode));
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.mathModeBackground)).BeginInit();
             this.SuspendLayout();
-            // 
-            // mathModeBackground
-            // 
-            this.mathModeBackground.Location = new System.Drawing.Point(13, 13);
-            this.mathModeBackground.Name = "mathModeBackground";
-            this.mathModeBackground.Size = new System.Drawing.Size(413, 276);
-            this.mathModeBackground.TabIndex = 0;
-            this.mathModeBackground.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(539, 70);
+            this.button1.Location = new System.Drawing.Point(337, 47);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -55,22 +46,26 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(849, 581);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.mathModeBackground);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MathSelectMode";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MathSelectMode";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MathSelectMode_Load);
             this.Resize += new System.EventHandler(this.MathSelectMode_Resize);
-            ((System.ComponentModel.ISupportInitialize)(this.mathModeBackground)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.PictureBox mathModeBackground;
         private System.Windows.Forms.Button button1;
     }
 }

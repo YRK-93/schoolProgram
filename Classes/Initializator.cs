@@ -7,13 +7,8 @@ using System.Drawing;
 
 namespace SHKOLA
 {
-    class Initializator
+    abstract class Initializator
     {
-        public Initializator()
-        {
-
-        }
-
         public static bool LoadImages()
         {
             ImagesStore.InitStore();
@@ -50,24 +45,6 @@ namespace SHKOLA
             AppStatistic.ResetStatistic();
 
             return true;
-        }
-
-        public static void FitBackgroundImageToWindowSize(object sender, PictureBox pBox)
-        {
-            Form wind = (Form)sender;
-            pBox.Top = 0;
-            pBox.Left = 0;
-            pBox.Width = wind.Width;
-            pBox.Height = wind.Height;
-        }
-
-        public static void FitExerciseLabelToWindowSize(Label pLabel, int top, int left, float fSize)
-        {
-            pLabel.BackColor = Color.Transparent;
-            pLabel.Top = top;
-            pLabel.Left = left;
-            pLabel.AutoSize = true;
-            pLabel.Font = new Font("Arial", fSize, FontStyle.Bold);
         }
 
         public static List<string> GetStatusesList(CompanionType cmpType)
@@ -186,16 +163,15 @@ namespace SHKOLA
             }
         }
 
-        public static Image GetImage(string name)
+        public static Image GetImage(string name, Color colorToMakeTransparent)
         {
+            if (colorToMakeTransparent != Color.Transparent)
+            {
+                Bitmap bmp = new Bitmap(imagesArray[name]);
+                bmp.MakeTransparent(colorToMakeTransparent);
+                return bmp;
+            }
             return imagesArray[name];
-        }
-
-        public static Image GetTransparentImage(string name, Color cl)
-        {
-            Bitmap bmp = new Bitmap(imagesArray[name]);
-            bmp.MakeTransparent(cl);
-            return bmp;
         }
     }
 }

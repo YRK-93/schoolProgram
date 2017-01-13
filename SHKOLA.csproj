@@ -48,9 +48,17 @@
   <ItemGroup>
     <Compile Include="Classes\AppConstants.cs" />
     <Compile Include="Classes\AppStatistic.cs" />
+    <Compile Include="Classes\BaseView.cs" />
+    <Compile Include="Classes\Blackboard.cs" />
+    <Compile Include="Classes\ButtonControl.cs" />
     <Compile Include="Classes\Companion.cs" />
     <Compile Include="Classes\ExerciseGenerator.cs" />
+    <Compile Include="Classes\HorizontalButtonsPane.cs" />
     <Compile Include="Classes\Initializator.cs" />
+    <Compile Include="Classes\MainView.cs" />
+    <Compile Include="Classes\MathPlusView.cs" />
+    <Compile Include="Classes\MathSelectModeView.cs" />
+    <Compile Include="Classes\WinElement.cs" />
     <Compile Include="Forms\MathPlus.cs">
       <SubType>Form</SubType>
     </Compile>

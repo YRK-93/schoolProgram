@@ -13,9 +13,9 @@ namespace SHKOLA
         ctOther
     }
 
-    class Companion
+    class Companion : WinElement
     {
-        Button companionControl;
+        Form compParent;
         CompanionType comanionType;
         List<string> statusImagesList;
         List<string> goodPhrases;
@@ -27,31 +27,42 @@ namespace SHKOLA
 
         }
 
-        public Companion(PictureBox paren, ref Button ctrl, CompanionType ctp)
+        public Companion(Form paren, ref Button ctrl, CompanionType ctp, float topR, float leftR, float widthR, float heightR)
         {
-            companionControl = ctrl;
+            compParent = paren;
+            baseCtrl = ctrl;
             comanionType = ctp;
+
+            topRatio = topR;
+            leftRatio = leftR;
+            widthRatio = widthR;
+            heightRatio = heightR;
+
             statusImagesList = Initializator.GetStatusesList(ctp);
             goodPhrases = Initializator.GetGoodPhrasesList(ctp);
             badPhrases = Initializator.GetBadPhrasesList(ctp);
             curStatus = 0;
+        }
 
-            companionControl.Parent = paren;
-            companionControl.BackColor = Color.Transparent;
-            companionControl.TabIndex = 0;
-            companionControl.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            companionControl.FlatAppearance.MouseDownBackColor = Color.Transparent;
-            companionControl.TabStop = false;
-            companionControl.FlatStyle = FlatStyle.Flat;
-            companionControl.FlatAppearance.BorderSize = 0;
-            companionControl.BackgroundImage = ImagesStore.GetTransparentImage(statusImagesList[curStatus], Color.White);
-            companionControl.BackgroundImageLayout = ImageLayout.Stretch;
-            companionControl.Text = "";
+        public override void SetRightStyle() 
+        {
+            Button btn = (Button)baseCtrl;
+            btn.Parent = compParent;
+            btn.BackColor = Color.Transparent;
+            btn.TabIndex = 0;
+            btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btn.TabStop = false;
+            btn.FlatStyle = FlatStyle.Flat;
+            btn.FlatAppearance.BorderSize = 0;
+            btn.BackgroundImage = ImagesStore.GetImage(statusImagesList[curStatus], Color.White);
+            btn.BackgroundImageLayout = ImageLayout.Stretch;
+            btn.Text = "";
         }
 
         private void SetStatusImage(int indx)
         {
-            companionControl.BackgroundImage = ImagesStore.GetTransparentImage(statusImagesList[indx], Color.White);
+            baseCtrl.BackgroundImage = ImagesStore.GetImage(statusImagesList[indx], Color.White);
         }
 
         public void Unhappy()

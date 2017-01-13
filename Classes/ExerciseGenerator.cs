@@ -5,9 +5,36 @@ using System.Text;
 
 namespace SHKOLA
 {
+    class Excercise
+    {
+        string equation;
+        string answer;
+
+        public Excercise(string equ, string ans)
+        {
+            equation = equ;
+            answer = ans;
+        }
+
+        public string getEquation()
+        {
+            return equation;
+        }
+
+        public string getAnswer()
+        {
+            return answer;
+        }
+
+        public override string ToString()
+        {
+            return equation + answer;
+        }
+    }
+
     class ExerciseGenerator
     {
-        public static string GenPlusMinusExercise()
+        public static Excercise GenPlusMinusExercise()
         {
             int maxValue = 20;
             Random r = new Random();
@@ -30,7 +57,7 @@ namespace SHKOLA
             }
             else result = aa + bb;
 
-            return aa.ToString() + znak + bb.ToString() + " = " + result.ToString();
+            return new Excercise(aa.ToString() + znak + bb.ToString() + " = ", result.ToString());
         }
     }
 }

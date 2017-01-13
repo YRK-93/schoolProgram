@@ -11,81 +11,34 @@ namespace SHKOLA
 {
     public partial class MathSelectMode : Form
     {
-        List<PicButton> btnsList;
 
         public MathSelectMode()
         {
             InitializeComponent();
+            Initilization();
         }
 
-        int originalTop;
-        int originalLeft;
-        int originalWidth;
-        int originalHeight;
-
-        public MathSelectMode(int Top, int Left, int wd, int ht)
+        public void Initilization()
         {
-            InitializeComponent();
-            originalTop = Top;
-            originalLeft = Left;
-            originalWidth = wd;
-            originalHeight = ht;
+            // buttons settings
+            MathSelectModeView.AddElement(new ButtonControl(ref this.button1, 0.2f, 0.3f, 0.4f, 0.16f, "math_mode_button_plus_g", this));
         }
 
         private void MathSelectMode_Load(object sender, EventArgs e)
         {
-            //Form settings
-            MathSelectMode mSM = (MathSelectMode)sender;
-            mSM.CenterToScreen();
-            mSM.FormBorderStyle = FormBorderStyle.FixedDialog;
-            mSM.Top = originalTop;
-            mSM.Left = originalLeft;
-            mSM.Width = originalWidth;
-            mSM.Height = originalHeight;
-
-            // Background settings
-            mathModeBackground.Image = ImagesStore.GetImage("math_mode_background");
-            mathModeBackground.SizeMode = PictureBoxSizeMode.StretchImage;
-            Initializator.FitBackgroundImageToWindowSize(sender, mathModeBackground);
-
-            // buttons settings
-            btnsList = new List<PicButton>();
-            btnsList.Add(new PicButton(ref button1, PicButtonName.pbMathModePlus, "math_mode_button_plus_g", "math_mode_button_plus_y"));
-            foreach (PicButton pBtn in btnsList)
-                UpdateButtonSizeLocation((Form)sender, pBtn);
+            MathSelectModeView.Actualize(this);
+            this.TopMost = false;
         }
 
         private void MathSelectMode_Resize(object sender, EventArgs e)
         {
-            Initializator.FitBackgroundImageToWindowSize(sender, mathModeBackground);
-            foreach (PicButton pBtn in btnsList)
-                UpdateButtonSizeLocation((Form)sender, pBtn);
-        }
-
-        private void UpdateButtonSizeLocation(Form win, PicButton btn)
-        {
-            int marginTop = (int)(win.Height * 0.2);
-            //int marginBot = 100;
-
-            switch (btn.bName)
-            {
-                case PicButtonName.pbMathModePlus:
-                    {
-                        btn.pButton.Width = (int)(win.Width * 0.4);
-                        btn.pButton.Height = (int)(win.Height * 0.16);
-
-                        btn.pButton.Top = (int)(marginTop + (/*numberFromTop*/1 - 1) * btn.pButton.Height);
-                        btn.pButton.Left = (int)((win.Width * 0.5) - (btn.pButton.Width * 0.5));
-                        break;
-                    }
-            }
+            MathSelectModeView.Actualize(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            var mathForm = new MathPlus(this.Top, this.Left, this.Width, this.Height);
-            mathForm.ShowDialog();
+            MathSelectModeView.OnMathPlusClicked();
             this.Close();
         }
     }
