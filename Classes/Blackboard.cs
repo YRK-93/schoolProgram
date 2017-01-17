@@ -7,31 +7,28 @@ using System.Drawing;
 
 namespace SHKOLA
 {
-    class Blackboard : WinElement
+    class Blackboard : ButtonControl
     {
         Excercise currentExecrise;
         float fontSize; // 93 x 71
-        string backgImg;
 
-        public Blackboard(ref Label controlFounder, float topR, float leftR, float widthR, float heightR, string backImg = "")
+        public Blackboard(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, string backImg = "", Form cParent = null):
+            base(ref controlFounder, topR, leftR, widthR, heightR, backImg, cParent)
         {
             baseCtrl = controlFounder;
             topRatio = topR;
             leftRatio = leftR;
             widthRatio = widthR;
             heightRatio = heightR;
-            backgImg = backImg;
             SetRightStyle();
+            SetRightFont();
             ShowNextExercise();
         }
 
-        public override void SetRightStyle()
+        private void SetRightFont()
         {
-            Label lb = (Label)baseCtrl;
-            lb.BackColor = Color.Red;
-            lb.AutoSize = false;
             fontSize = 100.0f;
-            lb.Font = new Font("Arial", fontSize, FontStyle.Bold);
+            baseCtrl.Font = new Font("Arial", fontSize, FontStyle.Bold);
         }
 
         public void ShowNextExercise()

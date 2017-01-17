@@ -14,6 +14,9 @@ namespace SHKOLA
         string caption;
         Form btnParent;
 
+        public ButtonControl()
+        {}
+
         public ButtonControl(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, string backImg, Form parentForControl = null, string selectImg = "", string name = "")
         {
             btnParent = parentForControl;

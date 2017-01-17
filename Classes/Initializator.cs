@@ -34,6 +34,7 @@ namespace SHKOLA
             ImagesStore.LoadImg("math_button_erase", "res/math_plus/btnErase.png");
             ImagesStore.LoadImg("belka", "res/math_plus/belka.png");
             ImagesStore.LoadImg("pig_tooltip", "res/math_plus/tooltip.png");
+            ImagesStore.LoadImg("paper", "res/math_plus/paper.png");
 
             AppStatistic.ResetStatistic();
 

@@ -38,7 +38,7 @@ namespace SHKOLA
             MathPlusView.AddElement(btnsPane);
 
             MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, "belka", 0.6f, 0.68f, 0.3f, 0.3f));
-            MathPlusView.AddBoard(new Blackboard(ref exercise, 0.17f, 0.06f, 0.62f, 0.6f));
+            MathPlusView.AddBoard(new Blackboard(ref btnBoard, 0.17f, 0.06f, 0.62f, 0.6f, "paper", this));
         }
 
         private void MathPlus_Load(object sender, EventArgs e)

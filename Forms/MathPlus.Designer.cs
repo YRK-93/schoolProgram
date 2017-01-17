@@ -39,11 +39,11 @@
             this.btn7 = new System.Windows.Forms.Button();
             this.btn8 = new System.Windows.Forms.Button();
             this.btn9 = new System.Windows.Forms.Button();
-            this.exercise = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnErase = new System.Windows.Forms.Button();
             this.btnPigCompanion = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnBoard = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn0
@@ -146,18 +146,6 @@
             this.btn9.UseVisualStyleBackColor = true;
             this.btn9.Click += new System.EventHandler(this.btn9_Click);
             // 
-            // exercise
-            // 
-            this.exercise.BackColor = System.Drawing.Color.Maroon;
-            this.exercise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exercise.Location = new System.Drawing.Point(670, 37);
-            this.exercise.Name = "exercise";
-            this.exercise.Size = new System.Drawing.Size(199, 30);
-            this.exercise.TabIndex = 0;
-            this.exercise.Text = "22 + 33 = 55";
-            this.exercise.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.exercise.UseMnemonic = false;
-            // 
             // btnNext
             // 
             this.btnNext.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -200,6 +188,15 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnBoard
+            // 
+            this.btnBoard.Location = new System.Drawing.Point(890, 443);
+            this.btnBoard.Name = "btnBoard";
+            this.btnBoard.Size = new System.Drawing.Size(75, 23);
+            this.btnBoard.TabIndex = 15;
+            this.btnBoard.Text = "Board";
+            this.btnBoard.UseVisualStyleBackColor = true;
+            // 
             // MathPlus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,11 +204,11 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 645);
+            this.Controls.Add(this.btnBoard);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnPigCompanion);
             this.Controls.Add(this.btnErase);
             this.Controls.Add(this.btnNext);
-            this.Controls.Add(this.exercise);
             this.Controls.Add(this.btn9);
             this.Controls.Add(this.btn8);
             this.Controls.Add(this.btn7);
@@ -248,10 +245,10 @@
         private System.Windows.Forms.Button btn7;
         private System.Windows.Forms.Button btn8;
         private System.Windows.Forms.Button btn9;
-        private System.Windows.Forms.Label exercise;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnErase;
         private System.Windows.Forms.Button btnPigCompanion;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnBoard;
     }
 }
