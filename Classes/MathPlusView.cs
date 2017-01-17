@@ -32,7 +32,14 @@ namespace SHKOLA
         static public void OnNextClicked()
         {
             if (mathBoard.isAnswerRight())
+            {
+                System.Media.SystemSounds.Asterisk.Play();
                 mathBoard.ShowNextExercise();
+            }
+            else
+            {
+                System.Media.SystemSounds.Hand.Play();   
+            }
         }
 
         static public void ProcessKey(Keys key)

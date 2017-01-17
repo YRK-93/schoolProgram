@@ -54,7 +54,6 @@
     <Compile Include="Classes\Companion.cs" />
     <Compile Include="Classes\ExerciseGenerator.cs" />
     <Compile Include="Classes\HorizontalButtonsPane.cs" />
-    <Compile Include="Classes\ImagesStore.cs" />
     <Compile Include="Classes\Initializator.cs" />
     <Compile Include="Classes\MainView.cs" />
     <Compile Include="Classes\MathPlusView.cs" />
