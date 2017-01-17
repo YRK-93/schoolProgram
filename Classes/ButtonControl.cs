@@ -9,15 +9,14 @@ namespace SHKOLA
 {
     class ButtonControl : WinElement
     {
-        string backImageName;
-        string onSelectImageName;
+        Image backImage;
         string caption;
         Form btnParent;
 
         public ButtonControl()
         {}
 
-        public ButtonControl(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, string backImg, Form parentForControl = null, string selectImg = "", string name = "")
+        public ButtonControl(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form parentForControl = null, string name = "")
         {
             btnParent = parentForControl;
             baseCtrl = controlFounder;
@@ -25,8 +24,7 @@ namespace SHKOLA
             leftRatio = leftR;
             widthRatio = widthR;
             heightRatio = heightR;
-            backImageName = backImg;
-            onSelectImageName = selectImg;
+            backImage = backImg;
             caption = name;
             SetRightStyle();
         }
@@ -43,7 +41,7 @@ namespace SHKOLA
             btn.TabStop = false;
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
-            btn.BackgroundImage = ImagesStore.GetImage(backImageName);
+            btn.BackgroundImage = backImage;
             btn.BackgroundImageLayout = ImageLayout.Stretch;
             btn.Text = caption;
         }

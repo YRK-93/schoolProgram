@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace SHKOLA
 {
@@ -37,9 +38,9 @@ namespace SHKOLA
 
         }
 
-        public void AddButtonOnPane(ref Button controlFounder, string backImg, string selectImg = "", string name = "")
+        public void AddButtonOnPane(ref Button controlFounder, Image backImg, string name = "")
         {
-            paneButtons.Add(new ButtonControl(ref controlFounder, topRatio, leftRatio, widthRatio, heightRatio, backImg, parentControl, selectImg, name));
+            paneButtons.Add(new ButtonControl(ref controlFounder, topRatio, leftRatio, widthRatio, heightRatio, backImg, parentControl, name));
         }
 
         public override void OnUpdate(Form updForm)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Media;
 using System.Windows.Forms;
+using SHKOLA.Properties;
 
 namespace SHKOLA
 {
@@ -21,24 +22,24 @@ namespace SHKOLA
         public void Initilization()
         {
             // buttons settings
-            MathPlusView.AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, "math_button_next", this));
-            MathPlusView.AddElement(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, "math_button_back", this));
+            MathPlusView.AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, Resources.btnNext, this));
+            MathPlusView.AddElement(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, Resources.btnBack, this));
             HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.8f, 0.06f, 0.62f, 0.1f, HorizPanelAlign.hEvenly);
-            btnsPane.AddButtonOnPane(ref btn0, "math_digit_0");
-            btnsPane.AddButtonOnPane(ref btn1, "math_digit_1");
-            btnsPane.AddButtonOnPane(ref btn2, "math_digit_2");
-            btnsPane.AddButtonOnPane(ref btn3, "math_digit_3");
-            btnsPane.AddButtonOnPane(ref btn4, "math_digit_4");
-            btnsPane.AddButtonOnPane(ref btn5, "math_digit_5");
-            btnsPane.AddButtonOnPane(ref btn6, "math_digit_6");
-            btnsPane.AddButtonOnPane(ref btn7, "math_digit_7");
-            btnsPane.AddButtonOnPane(ref btn8, "math_digit_8");
-            btnsPane.AddButtonOnPane(ref btn9, "math_digit_9");
-            btnsPane.AddButtonOnPane(ref btnErase, "math_button_erase");
+            btnsPane.AddButtonOnPane(ref btn0, Resources.digit0);
+            btnsPane.AddButtonOnPane(ref btn1, Resources.digit1);
+            btnsPane.AddButtonOnPane(ref btn2, Resources.digit2);
+            btnsPane.AddButtonOnPane(ref btn3, Resources.digit3);
+            btnsPane.AddButtonOnPane(ref btn4, Resources.digit4);
+            btnsPane.AddButtonOnPane(ref btn5, Resources.digit5);
+            btnsPane.AddButtonOnPane(ref btn6, Resources.digit6);
+            btnsPane.AddButtonOnPane(ref btn7, Resources.digit7);
+            btnsPane.AddButtonOnPane(ref btn8, Resources.digit8);
+            btnsPane.AddButtonOnPane(ref btn9, Resources.digit9);
+            btnsPane.AddButtonOnPane(ref btnErase, Resources.btnErase);
             MathPlusView.AddElement(btnsPane);
 
-            MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, "belka", 0.6f, 0.68f, 0.3f, 0.3f));
-            MathPlusView.AddBoard(new Blackboard(ref btnBoard, 0.17f, 0.06f, 0.62f, 0.6f, "paper", this));
+            MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.68f, 0.3f, 0.3f));
+            MathPlusView.AddBoard(new Blackboard(ref btnBoard, 0.17f, 0.06f, 0.62f, 0.6f, Resources.paper, this));
         }
 
         private void MathPlus_Load(object sender, EventArgs e)

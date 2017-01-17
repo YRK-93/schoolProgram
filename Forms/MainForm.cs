@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SHKOLA.Properties;
 
 namespace SHKOLA
 {
@@ -20,7 +21,7 @@ namespace SHKOLA
         public void Initilization()
         {
             // buttons settings
-            MainView.AddElement(new ButtonControl(ref this.button1, 0.2f, 0.3f, 0.4f, 0.16f, "main_math_button_g", this));
+            MainView.AddElement(new ButtonControl(ref this.button1, 0.2f, 0.3f, 0.4f, 0.16f, Resources.btnMathG, this));
         }
 
         private void Form1_Load(object sender, EventArgs e)

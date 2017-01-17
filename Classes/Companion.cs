@@ -16,18 +16,18 @@ namespace SHKOLA
     class Companion : WinElement
     {
         Form compParent;
-        string imageStr;
+        Image picture;
 
         public Companion()
         {
 
         }
 
-        public Companion(Form paren, ref Button ctrl, string img, float topR, float leftR, float widthR, float heightR)
+        public Companion(Form paren, ref Button ctrl, Image img, float topR, float leftR, float widthR, float heightR)
         {
             compParent = paren;
             baseCtrl = ctrl;
-            imageStr = img;
+            picture = img;
 
             topRatio = topR;
             leftRatio = leftR;
@@ -47,7 +47,7 @@ namespace SHKOLA
             btn.TabStop = false;
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
-            btn.BackgroundImage = ImagesStore.GetImage(imageStr);
+            btn.BackgroundImage = picture;
             btn.BackgroundImageLayout = ImageLayout.Stretch;
             btn.Text = "";
         }

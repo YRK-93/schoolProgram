@@ -12,7 +12,7 @@ namespace SHKOLA
         Excercise currentExecrise;
         float fontSize; // 93 x 71
 
-        public Blackboard(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, string backImg = "", Form cParent = null):
+        public Blackboard(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form cParent = null):
             base(ref controlFounder, topR, leftR, widthR, heightR, backImg, cParent)
         {
             baseCtrl = controlFounder;

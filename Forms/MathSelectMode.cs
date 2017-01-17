@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SHKOLA.Properties;
 
 namespace SHKOLA
 {
@@ -21,7 +22,7 @@ namespace SHKOLA
         public void Initilization()
         {
             // buttons settings
-            MathSelectModeView.AddElement(new ButtonControl(ref this.button1, 0.2f, 0.3f, 0.4f, 0.16f, "math_mode_button_plus_g", this));
+            MathSelectModeView.AddElement(new ButtonControl(ref this.button1, 0.2f, 0.3f, 0.4f, 0.16f, Resources.plusG, this));
         }
 
         private void MathSelectMode_Load(object sender, EventArgs e)
