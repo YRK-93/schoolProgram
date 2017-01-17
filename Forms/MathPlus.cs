@@ -23,7 +23,7 @@ namespace SHKOLA
             // buttons settings
             MathPlusView.AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, "math_button_next", this));
             MathPlusView.AddElement(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, "math_button_back", this));
-            HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.8f, 0.06f, 0.3f, 0.1f, HorizPanelAlign.hEvenly);
+            HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.8f, 0.06f, 0.62f, 0.1f, HorizPanelAlign.hEvenly);
             btnsPane.AddButtonOnPane(ref btn0, "math_digit_0");
             btnsPane.AddButtonOnPane(ref btn1, "math_digit_1");
             btnsPane.AddButtonOnPane(ref btn2, "math_digit_2");
@@ -38,7 +38,7 @@ namespace SHKOLA
             MathPlusView.AddElement(btnsPane);
 
             MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, "belka", 0.6f, 0.68f, 0.3f, 0.3f));
-            MathPlusView.AddBoard(new Blackboard(ref exercise, 0.2f, 0.2f, 0.5f, 0.4f));
+            MathPlusView.AddBoard(new Blackboard(ref exercise, 0.17f, 0.06f, 0.62f, 0.6f));
         }
 
         private void MathPlus_Load(object sender, EventArgs e)
