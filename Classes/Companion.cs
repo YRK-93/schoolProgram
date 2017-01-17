@@ -47,7 +47,7 @@ namespace SHKOLA
             btn.TabStop = false;
             btn.FlatStyle = FlatStyle.Flat;
             btn.FlatAppearance.BorderSize = 0;
-            btn.BackgroundImage = ImagesStore.GetImage(imageStr, Color.White);
+            btn.BackgroundImage = ImagesStore.GetImage(imageStr);
             btn.BackgroundImageLayout = ImageLayout.Stretch;
             btn.Text = "";
         }

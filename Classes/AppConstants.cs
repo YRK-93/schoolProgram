@@ -14,7 +14,7 @@ namespace SHKOLA
         public const float fontSizeKoefficient = 0.14f;
         public const float marginTopKoef = 0.1f;
         public const float marginBottomKoef = 0.087f;
-        public const float marginLeftKoef = 0.14f;
+        public const float marginLeftKoef = 0.06f;
         public const float marginRightKoef = 0.145f;
         public const float digitButtonWidthKoef = 0.75f;
         public const float spaceWidthKoef = 0.1f;

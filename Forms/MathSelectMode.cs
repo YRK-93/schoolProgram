@@ -39,7 +39,7 @@ namespace SHKOLA
         {
             this.Hide();
             MathSelectModeView.OnMathPlusClicked();
-            this.Close();
+            this.Show();
         }
     }
 }

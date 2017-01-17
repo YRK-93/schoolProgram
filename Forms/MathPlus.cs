@@ -21,8 +21,9 @@ namespace SHKOLA
         public void Initilization()
         {
             // buttons settings
-            MathPlusView.AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.1f, "math_button_next", Color.White, this));
-            HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.7f, AppConstants.marginLeftKoef, 0.3f, 0.1f, HorizPanelAlign.hEvenly);
+            MathPlusView.AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, "math_button_next", this));
+            MathPlusView.AddElement(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, "math_button_back", this));
+            HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.8f, 0.06f, 0.3f, 0.1f, HorizPanelAlign.hEvenly);
             btnsPane.AddButtonOnPane(ref btn0, "math_digit_0");
             btnsPane.AddButtonOnPane(ref btn1, "math_digit_1");
             btnsPane.AddButtonOnPane(ref btn2, "math_digit_2");
@@ -36,7 +37,7 @@ namespace SHKOLA
             btnsPane.AddButtonOnPane(ref btnErase, "math_button_erase");
             MathPlusView.AddElement(btnsPane);
 
-            MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, "belka", 0.7f, 0.8f, 0.1f, 0.1f));
+            MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, "belka", 0.6f, 0.68f, 0.3f, 0.3f));
             MathPlusView.AddBoard(new Blackboard(ref exercise, 0.2f, 0.2f, 0.5f, 0.4f));
         }
 
@@ -114,6 +115,11 @@ namespace SHKOLA
         private void MathPlus_KeyUp(object sender, KeyEventArgs e)
         {
             MathPlusView.ProcessKey(e.KeyCode);
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

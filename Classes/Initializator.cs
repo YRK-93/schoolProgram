@@ -30,6 +30,7 @@ namespace SHKOLA
             ImagesStore.LoadImg("math_digit_8", "res/math_plus/digit8.png");
             ImagesStore.LoadImg("math_digit_9", "res/math_plus/digit9.png");
             ImagesStore.LoadImg("math_button_next", "res/math_plus/btnNext.png");
+            ImagesStore.LoadImg("math_button_back", "res/math_plus/btnBack.png");
             ImagesStore.LoadImg("math_button_erase", "res/math_plus/btnErase.png");
             ImagesStore.LoadImg("belka", "res/math_plus/belka.png");
             ImagesStore.LoadImg("pig_tooltip", "res/math_plus/tooltip.png");
@@ -69,15 +70,11 @@ namespace SHKOLA
             }
         }
 
-        public static Image GetImage(string name, Color colorToMakeTransparent)
+        public static Image GetImage(string name)
         {
-            if (colorToMakeTransparent != Color.Transparent)
-            {
-                Bitmap bmp = new Bitmap(imagesArray[name]);
-                bmp.MakeTransparent(colorToMakeTransparent);
-                return bmp;
-            }
-            return imagesArray[name];
+            Bitmap bmp = new Bitmap(imagesArray[name]);
+            bmp.MakeTransparent(Color.White);
+            return bmp;
         }
     }
 }

@@ -43,7 +43,7 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnErase = new System.Windows.Forms.Button();
             this.btnPigCompanion = new System.Windows.Forms.Button();
-            this.btnToolTip = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn0
@@ -190,15 +190,15 @@
             this.btnPigCompanion.Text = "Pig";
             this.btnPigCompanion.UseVisualStyleBackColor = true;
             // 
-            // btnToolTip
+            // btnBack
             // 
-            this.btnToolTip.Location = new System.Drawing.Point(891, 414);
-            this.btnToolTip.Name = "btnToolTip";
-            this.btnToolTip.Size = new System.Drawing.Size(75, 23);
-            this.btnToolTip.TabIndex = 14;
-            this.btnToolTip.Text = "button1";
-            this.btnToolTip.UseVisualStyleBackColor = true;
-            this.btnToolTip.Visible = false;
+            this.btnBack.Location = new System.Drawing.Point(891, 414);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 14;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // MathPlus
             // 
@@ -207,7 +207,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 645);
-            this.Controls.Add(this.btnToolTip);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnPigCompanion);
             this.Controls.Add(this.btnErase);
             this.Controls.Add(this.btnNext);
@@ -252,6 +252,6 @@
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnErase;
         private System.Windows.Forms.Button btnPigCompanion;
-        private System.Windows.Forms.Button btnToolTip;
+        private System.Windows.Forms.Button btnBack;
     }
 }
