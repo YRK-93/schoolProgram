@@ -36,7 +36,7 @@ namespace SHKOLA
             btnsPane.AddButtonOnPane(ref btnErase, "math_button_erase");
             MathPlusView.AddElement(btnsPane);
 
-            MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, CompanionType.ctMathPig, 0.7f, 0.8f, 0.1f, 0.1f));
+            MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, "belka", 0.7f, 0.8f, 0.1f, 0.1f));
             MathPlusView.AddBoard(new Blackboard(ref exercise, 0.2f, 0.2f, 0.5f, 0.4f));
         }
 

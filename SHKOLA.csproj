@@ -71,7 +71,6 @@
     <Compile Include="Forms\MathSelectMode.Designer.cs">
       <DependentUpon>MathSelectMode.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\PicButton.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +126,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="res\math_mode_select\plusY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\math_plus\belka.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="res\math_plus\btnErase.png">

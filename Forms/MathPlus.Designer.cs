@@ -44,7 +44,6 @@
             this.btnErase = new System.Windows.Forms.Button();
             this.btnPigCompanion = new System.Windows.Forms.Button();
             this.btnToolTip = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btn0
@@ -201,13 +200,6 @@
             this.btnToolTip.UseVisualStyleBackColor = true;
             this.btnToolTip.Visible = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(172, 69);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(288, 20);
-            this.textBox1.TabIndex = 15;
-            // 
             // MathPlus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -215,7 +207,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 645);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnToolTip);
             this.Controls.Add(this.btnPigCompanion);
             this.Controls.Add(this.btnErase);
@@ -242,7 +233,6 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MathPlus_KeyUp);
             this.Resize += new System.EventHandler(this.MathPlus_Resize);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -263,6 +253,5 @@
         private System.Windows.Forms.Button btnErase;
         private System.Windows.Forms.Button btnPigCompanion;
         private System.Windows.Forms.Button btnToolTip;
-        private System.Windows.Forms.TextBox textBox1;
     }
 }

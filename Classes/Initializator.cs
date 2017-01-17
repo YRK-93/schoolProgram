@@ -12,7 +12,7 @@ namespace SHKOLA
         public static bool LoadImages()
         {
             ImagesStore.InitStore();
-            ImagesStore.LoadImg("main_background","res/main_menu/mBackground.png");
+            ImagesStore.LoadImg("main_background", "res/main_menu/mBackground.png");
             ImagesStore.LoadImg("main_math_button_g", "res/main_menu/btnMathG.png");
             ImagesStore.LoadImg("main_math_button_y", "res/main_menu/btnMathY.png");
             ImagesStore.LoadImg("math_mode_background", "res/math_mode_select/mathModeBackground.png");
@@ -31,15 +31,7 @@ namespace SHKOLA
             ImagesStore.LoadImg("math_digit_9", "res/math_plus/digit9.png");
             ImagesStore.LoadImg("math_button_next", "res/math_plus/btnNext.png");
             ImagesStore.LoadImg("math_button_erase", "res/math_plus/btnErase.png");
-            ImagesStore.LoadImg("pig_status1", "res/math_plus/pig_statuses/pig1.png");
-            ImagesStore.LoadImg("pig_status2", "res/math_plus/pig_statuses/pig2.png");
-            ImagesStore.LoadImg("pig_status3", "res/math_plus/pig_statuses/pig3.png");
-            ImagesStore.LoadImg("pig_status4", "res/math_plus/pig_statuses/pig4.png");
-            ImagesStore.LoadImg("pig_status5", "res/math_plus/pig_statuses/pig5.png");
-            ImagesStore.LoadImg("pig_status6", "res/math_plus/pig_statuses/pig6.png");
-            ImagesStore.LoadImg("pig_status7", "res/math_plus/pig_statuses/pig7.png");
-            ImagesStore.LoadImg("pig_status8", "res/math_plus/pig_statuses/pig8.png");
-            ImagesStore.LoadImg("pig_status9", "res/math_plus/pig_statuses/pig9.png");
+            ImagesStore.LoadImg("belka", "res/math_plus/belka.png");
             ImagesStore.LoadImg("pig_tooltip", "res/math_plus/tooltip.png");
 
             AppStatistic.ResetStatistic();
@@ -47,94 +39,8 @@ namespace SHKOLA
             return true;
         }
 
-        public static List<string> GetStatusesList(CompanionType cmpType)
-        {
-            List<string> res = new List<string>();
-            switch (cmpType)
-            {
-                case CompanionType.ctMathPig:
-                    {
-                        res.Add("pig_status1");
-                        res.Add("pig_status2");
-                        res.Add("pig_status3");
-                        res.Add("pig_status4");
-                        res.Add("pig_status5");
-                        res.Add("pig_status6");
-                        res.Add("pig_status7");
-                        res.Add("pig_status8");
-                        res.Add("pig_status9");
-                        break;
-                    }
-            }
-            return res;
-        }
-
-        public static List<string> GetGoodPhrasesList(CompanionType cmpType)
-        {
-            List<string> res = new List<string>();
-            switch (cmpType)
-            {
-                case CompanionType.ctMathPig:
-                    {
-                        res.Add("Молодец!");
-                        res.Add("Ты посмотри какой умный!");
-                        res.Add("Клёво!");
-                        res.Add("Умница!");
-                        res.Add("Ты супер!");
-                        res.Add("Хороший результат!");
-                        res.Add("Вот так и надо!");
-                        res.Add("Становишься умнее!");
-                        res.Add("Восхитително!");
-                        res.Add("Потрясно!");
-                        res.Add("Великолепно!");
-                        res.Add("Яйца будем кушать!");
-                        res.Add("Так и продолжай!");
-                        res.Add("Потрясающе!");
-                        res.Add("Ты наверное отличница?");
-                        res.Add("Главное правильно!");
-                        res.Add("Ну ты даешь!");
-                        res.Add("Ты нам помогаешь!");
-                        res.Add("Спасибо за помощь!");
-                        res.Add("С меня причитается!");
-                        break;
-                    }
-            }
-            return res;
-        }
-
-        public static List<string> GetBadPhrasesList(CompanionType cmpType)
-        {
-            List<string> res = new List<string>();
-            switch (cmpType)
-            {
-                case CompanionType.ctMathPig:
-                    {
-                        res.Add("Ну как так!?");
-                        res.Add("Не тупи!");
-                        res.Add("Очень жаль!");
-                        res.Add("Ну ты совсем...");
-                        res.Add("Ты хоть подумал?");
-                        res.Add("Свиньи недовольны!");
-                        res.Add("Очень плохо!");
-                        res.Add("Одно разочарование!");
-                        res.Add("Подумай!");
-                        res.Add("Опять поспешил!?");
-                        res.Add("Ну почему!?");
-                        res.Add("Останемся голодными!");
-                        res.Add("Нам так не везет!");
-                        res.Add("Ничего не знаешь!");
-                        res.Add("Мы думали ты отличник!");
-                        res.Add("Главное правильно!");
-                        res.Add("Ну невезет же!");
-                        res.Add("Как так можно!");
-                        res.Add("Ты не соображаешь!");
-                        res.Add("Свиньи в отчаянии!");
-                        break;
-                    }
-            }
-            return res;
-        }
     }
+
 
     class ImagesStore
     {
