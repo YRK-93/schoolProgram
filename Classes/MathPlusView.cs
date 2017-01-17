@@ -8,17 +8,7 @@ namespace SHKOLA
 {
     class MathPlusView : BaseView
     {
-        static Companion pigCompanion;
         static Blackboard mathBoard;
-
-        static public void AddCompanion(Companion cmp)
-        {
-            if (cmp != null)
-            {
-                pigCompanion = cmp;
-                AddElement(cmp);
-            }
-        }
 
         static public void AddBoard(Blackboard brd)
         {

@@ -37,8 +37,7 @@ namespace SHKOLA
             btnsPane.AddButtonOnPane(ref btn9, Resources.digit9);
             btnsPane.AddButtonOnPane(ref btnErase, Resources.btnErase);
             MathPlusView.AddElement(btnsPane);
-
-            MathPlusView.AddCompanion(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.68f, 0.3f, 0.3f));
+            MathPlusView.AddElement(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.68f, 0.3f, 0.3f));
             MathPlusView.AddBoard(new Blackboard(ref btnBoard, 0.17f, 0.06f, 0.62f, 0.6f, Resources.paper, this));
         }
 
