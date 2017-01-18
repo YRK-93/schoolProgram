@@ -9,6 +9,7 @@ namespace SHKOLA
     class MathPlusView : BaseView
     {
         static Blackboard mathBoard;
+        static ResultMessage resMessage;
 
         static public void AddBoard(Blackboard brd)
         {
@@ -19,17 +20,24 @@ namespace SHKOLA
             }
         }
 
+        static public void AddResultMessage(ResultMessage rmsg)
+        {
+            if (rmsg != null)
+            {
+                resMessage = rmsg;
+                AddElement(rmsg);
+            }
+        }
+
         static public void OnNextClicked()
         {
             if (mathBoard.isAnswerRight())
             {
-                System.Media.SystemSounds.Asterisk.Play();
+                resMessage.ShowRight();
                 mathBoard.ShowNextExercise();
             }
             else
-            {
-                System.Media.SystemSounds.Hand.Play();   
-            }
+                resMessage.ShowWrong();
         }
 
         static public void ProcessKey(Keys key)

@@ -58,6 +58,7 @@
     <Compile Include="Classes\MainView.cs" />
     <Compile Include="Classes\MathPlusView.cs" />
     <Compile Include="Classes\MathSelectModeView.cs" />
+    <Compile Include="Classes\ResultMessage.cs" />
     <Compile Include="Classes\WinElement.cs" />
     <Compile Include="Forms\MathPlus.cs">
       <SubType>Form</SubType>
@@ -107,6 +108,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\main_menu\btnMathY.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

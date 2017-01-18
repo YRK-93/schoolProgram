@@ -43,6 +43,7 @@
             this.btnPigCompanion = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnBoard = new System.Windows.Forms.Button();
+            this.btnMsg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn0
@@ -196,6 +197,16 @@
             this.btnBoard.Text = "Board";
             this.btnBoard.UseVisualStyleBackColor = true;
             // 
+            // btnMsg
+            // 
+            this.btnMsg.AutoSize = true;
+            this.btnMsg.Location = new System.Drawing.Point(891, 472);
+            this.btnMsg.Name = "btnMsg";
+            this.btnMsg.Size = new System.Drawing.Size(75, 23);
+            this.btnMsg.TabIndex = 16;
+            this.btnMsg.Text = "Message";
+            this.btnMsg.UseVisualStyleBackColor = true;
+            // 
             // MathPlus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,6 +214,7 @@
             this.BackgroundImage = global::SHKOLA.Properties.Resources.mathPlusBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1058, 645);
+            this.Controls.Add(this.btnMsg);
             this.Controls.Add(this.btnBoard);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnPigCompanion);
@@ -223,12 +235,12 @@
             this.Name = "MathPlus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MathPlus";
-            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MathPlus_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MathPlus_KeyUp);
             this.Resize += new System.EventHandler(this.MathPlus_Resize);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -249,5 +261,6 @@
         private System.Windows.Forms.Button btnPigCompanion;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnBoard;
+        private System.Windows.Forms.Button btnMsg;
     }
 }
