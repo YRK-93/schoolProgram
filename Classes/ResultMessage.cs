@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Threading;
 using System.Threading.Tasks;
+using SHKOLA.Properties;
 
 namespace SHKOLA
 {
@@ -13,14 +14,14 @@ namespace SHKOLA
     {
         ButtonControl btn;
 
-        public ResultMessage(ref Button baseBtn, float topR, float leftR, float widthR, float heightR, Image backImg, Form parentForControl = null)
+        public ResultMessage(ref Button baseBtn, float topR, float leftR, float widthR, float heightR, Form parentForControl = null)
         {
             baseCtrl = baseBtn;
             topRatio = topR;
             leftRatio = leftR;
             widthRatio = widthR;
             heightRatio = heightR;
-            btn = new ButtonControl(ref baseBtn, topR, leftR, widthR, heightR, backImg, parentForControl);
+            btn = new ButtonControl(ref baseBtn, topR, leftR, widthR, heightR, Resources.resMsgGr, parentForControl);
             baseCtrl.Hide();
         }
 
@@ -53,6 +54,8 @@ namespace SHKOLA
         {
             var snd = isRight ? System.Media.SystemSounds.Asterisk : System.Media.SystemSounds.Hand;
             baseCtrl.Text = isRight ? "ПРАВИЛЬНО" : "НЕПРАВИЛЬНО";
+            baseCtrl.BackgroundImage = isRight ? Resources.resMsgGr : Resources.resMsgRd;
+ 
             SetRightStyle();
             OnUpdate((Form)baseCtrl.Parent);
             baseCtrl.Show();
