@@ -194,6 +194,7 @@
             this.btnBoard.Name = "btnBoard";
             this.btnBoard.Size = new System.Drawing.Size(75, 23);
             this.btnBoard.TabIndex = 15;
+            this.btnBoard.TabStop = false;
             this.btnBoard.Text = "Board";
             this.btnBoard.UseVisualStyleBackColor = true;
             // 
