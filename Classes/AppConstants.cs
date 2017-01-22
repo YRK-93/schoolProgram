@@ -23,6 +23,7 @@ namespace SHKOLA
         public const int companionMarginFromWinBorder = 10;
         public const float companionToolTipLeftMarginKoef = 0.7f;
         public const float companionToolTipBottomMarginKoef = 0.35f;
+        public const int examinationQuestionsCount = 5;
 
 
 

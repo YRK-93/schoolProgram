@@ -10,6 +10,7 @@ namespace SHKOLA
     {
         static Blackboard mathBoard;
         static ResultMessage resMessage;
+        static bool examMode;
 
         static public void AddBoard(Blackboard brd)
         {
@@ -29,15 +30,33 @@ namespace SHKOLA
             }
         }
 
+        static public void SetExamMode()
+        {
+            examMode = true;
+        }
+
+        static public bool isExamMode()
+        {
+            return examMode;
+        }
+
         static public void OnNextClicked()
         {
-            if (mathBoard.isAnswerRight())
+            /*if (mathBoard.isAnswerRight())
             {
-                resMessage.ShowRight();
-                mathBoard.ShowNextExercise();
+                if (!examMode)
+                    resMessage.ShowRight();
+                if (mathBoard.isExcerciseLeft())
+                    mathBoard.ShowNextExercise();
+                else
+                {
+
+                }
             }
-            else
-                resMessage.ShowWrong();
+            else if (!examMode)
+                resMessage.ShowWrong();*/
+            ExamResults er = new ExamResults();
+            er.ShowDialog();
         }
 
         static public void ProcessKey(Keys key)

@@ -22,6 +22,7 @@ namespace SHKOLA
         public void Initilization()
         {
             // buttons settings
+            MathPlusView.SetExamMode();
             MathPlusView.AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, Resources.btnNext, this));
             MathPlusView.AddElement(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, Resources.btnBack, this));
             HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.8f, 0.06f, 0.62f, 0.1f, HorizPanelAlign.hEvenly);
@@ -38,7 +39,7 @@ namespace SHKOLA
             btnsPane.AddButtonOnPane(ref btnErase, Resources.btnErase);
             MathPlusView.AddElement(btnsPane);
             MathPlusView.AddElement(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.68f, 0.3f, 0.3f));
-            MathPlusView.AddBoard(new Blackboard(ref btnBoard, 0.17f, 0.06f, 0.62f, 0.6f, Resources.paper, this));
+            MathPlusView.AddBoard(new Blackboard(MathPlusView.isExamMode(), ref btnBoard, 0.17f, 0.06f, 0.62f, 0.6f, Resources.paper, this));
             MathPlusView.AddResultMessage(new ResultMessage(ref btnMsg, AppConstants.topButtonMarginKoef, 0.4f, 0.3f, 0.12f, Resources.btnMathY, this));
         }
 

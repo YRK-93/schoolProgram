@@ -9,17 +9,31 @@ namespace SHKOLA
 {
     class Blackboard : ButtonControl
     {
-        Excercise currentExecrise;
+        List<Excercise> execrisesList;
+        Excercise curExercise;
+        bool examMode;
         float fontSize; // 93 x 71
+        int currentExcNum;
 
-        public Blackboard(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form cParent = null):
+        public Blackboard(bool isExamMode, ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form cParent = null):
             base(ref controlFounder, topR, leftR, widthR, heightR, backImg, cParent)
         {
+            examMode = isExamMode;
             baseCtrl = controlFounder;
             topRatio = topR;
             leftRatio = leftR;
             widthRatio = widthR;
             heightRatio = heightR;
+            currentExcNum = -1;
+
+            if (examMode)
+                execrisesList = ExerciseGenerator.GenPlusMinusExamExercises(AppConstants.examinationQuestionsCount);
+            else
+            {
+                execrisesList = new List<Excercise>();
+                execrisesList.Add(ExerciseGenerator.GenPlusMinusExercise());
+            }
+            
             SetRightStyle();
             SetRightFont();
             ShowNextExercise();
@@ -31,15 +45,32 @@ namespace SHKOLA
             baseCtrl.Font = new Font("Arial", fontSize, FontStyle.Bold);
         }
 
+        private void GetNextExcercise()
+        {
+            if (examMode)
+            {
+                if (examMode && curExercise != execrisesList.Last())
+                    currentExcNum++;
+                curExercise = execrisesList[currentExcNum];
+            }
+            else 
+                curExercise = ExerciseGenerator.GenPlusMinusExercise();
+        }
+
         public void ShowNextExercise()
         {
-            currentExecrise = ExerciseGenerator.GenPlusMinusExercise();
-            baseCtrl.Text = currentExecrise.getEquation();
+            GetNextExcercise();
+            baseCtrl.Text = curExercise.getEquation();
+        }
+
+        public bool isExcerciseLeft()
+        {
+            return !(examMode && curExercise == execrisesList.Last());
         }
 
         public bool isAnswerRight()
         {
-            return baseCtrl.Text == (currentExecrise.ToString());
+            return baseCtrl.Text == (curExercise.ToString());
         }
 
         private bool isDigitCode(Keys code)
@@ -89,7 +120,7 @@ namespace SHKOLA
 
             if (isDigitCode(keyCode))
             {
-                if (baseCtrl.Text.Length < currentExecrise.ToString().Length)
+                if (baseCtrl.Text.Length < curExercise.ToString().Length)
                     baseCtrl.Text = baseCtrl.Text + GetDigitByKeyCode(keyCode);
             }
         }

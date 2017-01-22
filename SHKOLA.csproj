@@ -60,6 +60,12 @@
     <Compile Include="Classes\MathSelectModeView.cs" />
     <Compile Include="Classes\ResultMessage.cs" />
     <Compile Include="Classes\WinElement.cs" />
+    <Compile Include="Forms\ExamResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ExamResults.Designer.cs">
+      <DependentUpon>ExamResults.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MathPlus.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
     </Compile>
     <Compile Include="Classes\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\ExamResults.resx">
+      <DependentUpon>ExamResults.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -91,18 +100,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -110,7 +119,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\main_menu\btnMathY.png" />
+    <None Include="res\math_plus\btnBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\math_plus\btnNext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\math_plus\paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\math_plus\bckgResults.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
