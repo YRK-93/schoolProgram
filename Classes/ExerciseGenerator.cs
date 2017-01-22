@@ -9,11 +9,32 @@ namespace SHKOLA
     {
         string equation;
         string answer;
+        bool isCorrect;
 
-        public Excercise(string equ, string ans)
+        public Excercise(string str)
         {
-            equation = equ;
-            answer = ans;
+            string[] res = str.Split(' ');
+            isCorrect = checkIfCorrect(res[0], res[1], res[2], res[4]);
+            equation = res[0] + " " + res[1] + " " + res[2] + " = ";
+            answer = res[4];
+        }
+
+        private bool checkIfCorrect(string aa, string opration, string bb, string res)
+        {
+            int a = Convert.ToInt32(aa);
+            int b = Convert.ToInt32(bb);
+            int r = Convert.ToInt32(res);
+
+            if (opration == "+")
+                return (a + b) == r;
+
+            if (opration == "-")
+                return (a - b) == r;
+
+            if (opration == "*")
+                return (a * b) == r;
+
+            return false;
         }
 
         public string getEquation()
@@ -95,7 +116,7 @@ namespace SHKOLA
             }
             else result = aa + bb;
 
-            return new Excercise(aa.ToString() + znak + bb.ToString() + " = ", result.ToString());
+            return new Excercise(aa.ToString() + znak + bb.ToString() + " = " + result.ToString());
         }
 
         public static List<Excercise> GenPlusMinusExamExercises(int num)

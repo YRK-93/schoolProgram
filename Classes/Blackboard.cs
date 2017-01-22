@@ -41,7 +41,7 @@ namespace SHKOLA
 
         private void SetRightFont()
         {
-            fontSize = 100.0f;
+            fontSize = 120.0f;
             baseCtrl.Font = new Font("Arial", fontSize, FontStyle.Bold);
         }
 

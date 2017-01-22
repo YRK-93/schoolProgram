@@ -61,6 +61,16 @@ namespace SHKOLA.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Значок).
+        /// </summary>
+        public static System.Drawing.Icon AppIcon {
+            get {
+                object obj = ResourceManager.GetObject("AppIcon", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap bckgResults {
@@ -106,16 +116,6 @@ namespace SHKOLA.Properties {
         public static System.Drawing.Bitmap btnMathG {
             get {
                 object obj = ResourceManager.GetObject("btnMathG", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap btnMathY {
-            get {
-                object obj = ResourceManager.GetObject("btnMathY", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +276,26 @@ namespace SHKOLA.Properties {
         public static System.Drawing.Bitmap plusG {
             get {
                 object obj = ResourceManager.GetObject("plusG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap resMsgGr {
+            get {
+                object obj = ResourceManager.GetObject("resMsgGr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap resMsgRd {
+            get {
+                object obj = ResourceManager.GetObject("resMsgRd", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

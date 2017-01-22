@@ -38,10 +38,9 @@ namespace SHKOLA
             btnsPane.AddButtonOnPane(ref btn9, Resources.digit9);
             btnsPane.AddButtonOnPane(ref btnErase, Resources.btnErase);
             MathPlusView.AddElement(btnsPane);
-            MathPlusView.AddElement(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.68f, 0.3f, 0.3f));
-            MathPlusView.AddBoard(new Blackboard(MathPlusView.isExamMode(), ref btnBoard, 0.17f, 0.06f, 0.62f, 0.6f, Resources.paper, this));
-            MathPlusView.AddResultMessage(new ResultMessage(ref btnMsg, AppConstants.topButtonMarginKoef, 0.4f, 0.3f, 0.12f, Resources.btnMathY, this));
-        }
+            MathPlusView.AddElement(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.685f, 0.3f, 0.3f));
+            MathPlusView.AddBoard(new Blackboard(MathPlusView.isExamMode(), ref btnBoard, 0.5f, 0.06f, 0.62f, 200.0f, Resources.paper, this));
+            MathPlusView.AddResultMessage(new ResultMessage(ref btnMsg, AppConstants.topButtonMarginKoef, 0.4f, 0.3f, 0.12f, this));        }
 
         private void MathPlus_Load(object sender, EventArgs e)
         {

@@ -103,19 +103,13 @@ namespace SHKOLA
                         {
                             int bTop = paneTop;
                             int bLeft = paneLeft;
-                            int bHeight = paneHeight;
+                            int bHeight = paneWidth / paneButtons.Count;
                             int bWidth = bHeight;
-                            int bspace = 0;
-
-                            int part = paneWidth / paneButtons.Count;
-                            if (part >= bWidth)
-                                bspace = part - bWidth;
                             
                             foreach (ButtonControl btn in paneButtons)
                             {
                                 btn.SetLocationOnWindow(bTop, bLeft, bHeight, bWidth);
                                 bLeft += bWidth;
-                                bLeft += bspace;
                             }
                             break;
                         }
