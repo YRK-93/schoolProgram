@@ -279,5 +279,15 @@ namespace SHKOLA.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Значок).
+        /// </summary>
+        public static System.Drawing.Icon Untitled_1 {
+            get {
+                object obj = ResourceManager.GetObject("Untitled_1", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
     }
 }
