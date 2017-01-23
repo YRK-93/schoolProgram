@@ -12,11 +12,12 @@ namespace SHKOLA
         Image backImage;
         string caption;
         Form btnParent;
+        Font textFont;
 
         public ButtonControl()
         {}
 
-        public ButtonControl(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form parentForControl = null, string name = "")
+        public ButtonControl(ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form parentForControl = null, string name = "", Font fnt = null)
         {
             btnParent = parentForControl;
             baseCtrl = controlFounder;
@@ -26,6 +27,7 @@ namespace SHKOLA
             heightRatio = heightR;
             backImage = backImg;
             caption = name;
+            textFont = fnt;
             SetRightStyle();
         }
 
@@ -44,6 +46,7 @@ namespace SHKOLA
             btn.BackgroundImage = backImage;
             btn.BackgroundImageLayout = ImageLayout.Stretch;
             btn.Text = caption;
+            btn.Font = textFont;
         }
 
         public void SetLocationOnWindow(int topR, int leftR, int widthR, int heightR)

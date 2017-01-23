@@ -11,6 +11,7 @@ namespace SHKOLA
     {
         List<Excercise> execrisesList;
         Excercise curExercise;
+        List<Excercise> userAnswers;
         bool examMode;
         float fontSize; // 93 x 71
         int currentExcNum;
@@ -33,6 +34,8 @@ namespace SHKOLA
                 execrisesList = new List<Excercise>();
                 execrisesList.Add(ExerciseGenerator.GenPlusMinusExercise());
             }
+
+            userAnswers = new List<Excercise>();
             
             SetRightStyle();
             SetRightFont();
@@ -70,7 +73,12 @@ namespace SHKOLA
 
         public bool isAnswerRight()
         {
-            return baseCtrl.Text == (curExercise.ToString());
+            if (baseCtrl.Text == curExercise.getEquation())
+                return false;
+
+            if (examMode)
+                userAnswers.Add(new Excercise(baseCtrl.Text));
+            return examMode ? true : baseCtrl.Text == (curExercise.ToString());
         }
 
         private bool isDigitCode(Keys code)
@@ -123,6 +131,11 @@ namespace SHKOLA
                 if (baseCtrl.Text.Length < curExercise.ToString().Length)
                     baseCtrl.Text = baseCtrl.Text + GetDigitByKeyCode(keyCode);
             }
+        }
+
+        public List<Excercise> getUserAnswersList()
+        {
+            return userAnswers;
         }
     }
 }

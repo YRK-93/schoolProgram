@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SHKOLA
 {
-    class Excercise
+    public class Excercise
     {
         string equation;
         string answer;
@@ -45,6 +45,11 @@ namespace SHKOLA
         public string getAnswer()
         {
             return answer;
+        }
+
+        public bool isRight()
+        {
+            return isCorrect;
         }
 
         public override string ToString()

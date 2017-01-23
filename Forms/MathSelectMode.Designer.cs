@@ -28,18 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPlus = new System.Windows.Forms.Button();
+            this.btnPlusExam = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnPlus
             // 
-            this.button1.Location = new System.Drawing.Point(337, 47);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnPlus.Location = new System.Drawing.Point(337, 47);
+            this.btnPlus.Name = "btnPlus";
+            this.btnPlus.Size = new System.Drawing.Size(75, 23);
+            this.btnPlus.TabIndex = 1;
+            this.btnPlus.Text = "Plus training";
+            this.btnPlus.UseVisualStyleBackColor = true;
+            this.btnPlus.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnPlusExam
+            // 
+            this.btnPlusExam.Location = new System.Drawing.Point(337, 76);
+            this.btnPlusExam.Name = "btnPlusExam";
+            this.btnPlusExam.Size = new System.Drawing.Size(75, 23);
+            this.btnPlusExam.TabIndex = 2;
+            this.btnPlusExam.Text = "Plus exam";
+            this.btnPlusExam.UseVisualStyleBackColor = true;
+            this.btnPlusExam.Click += new System.EventHandler(this.btnPlusExam_Click);
             // 
             // MathSelectMode
             // 
@@ -48,7 +59,8 @@
             this.BackgroundImage = global::SHKOLA.Properties.Resources.mathModeBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(849, 581);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPlusExam);
+            this.Controls.Add(this.btnPlus);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -65,6 +77,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPlus;
+        private System.Windows.Forms.Button btnPlusExam;
     }
 }

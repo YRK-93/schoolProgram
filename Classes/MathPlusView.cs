@@ -30,9 +30,14 @@ namespace SHKOLA
             }
         }
 
-        static public void SetExamMode()
+        static public void EnableExamMode()
         {
             examMode = true;
+        }
+
+        static public void DisableExamMode()
+        {
+            examMode = false;
         }
 
         static public bool isExamMode()
@@ -40,9 +45,9 @@ namespace SHKOLA
             return examMode;
         }
 
-        static public void OnNextClicked()
+        static public bool OnNextClicked()
         {
-            /*if (mathBoard.isAnswerRight())
+            if (mathBoard.isAnswerRight())
             {
                 if (!examMode)
                     resMessage.ShowRight();
@@ -50,13 +55,15 @@ namespace SHKOLA
                     mathBoard.ShowNextExercise();
                 else
                 {
-
+                    ExamResults er = new ExamResults(mathBoard.getUserAnswersList());
+                    er.ShowDialog();
+                    DisableExamMode();
+                    return false;
                 }
             }
             else if (!examMode)
-                resMessage.ShowWrong();*/
-            ExamResults er = new ExamResults();
-            er.ShowDialog();
+                resMessage.ShowWrong();
+            return true;
         }
 
         static public void ProcessKey(Keys key)
