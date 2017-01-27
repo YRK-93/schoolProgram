@@ -56,6 +56,7 @@
     <Compile Include="Classes\Blackboard.cs" />
     <Compile Include="Classes\ButtonControl.cs" />
     <Compile Include="Classes\Companion.cs" />
+    <Compile Include="Classes\Excercise.cs" />
     <Compile Include="Classes\ExerciseGenerator.cs" />
     <Compile Include="Classes\HorizontalButtonsPane.cs" />
     <Compile Include="Classes\Initializator.cs" />

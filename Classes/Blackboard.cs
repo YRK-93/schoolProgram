@@ -11,7 +11,7 @@ namespace SHKOLA
     {
         List<Excercise> execrisesList;
         Excercise curExercise;
-        List<Excercise> userAnswers;
+        List<Answer> userAnswers;
         bool examMode;
         float fontSize; // 93 x 71
         int currentExcNum;
@@ -35,7 +35,7 @@ namespace SHKOLA
                 execrisesList.Add(ExerciseGenerator.GenPlusMinusExercise());
             }
 
-            userAnswers = new List<Excercise>();
+            userAnswers = new List<Answer>();
             
             SetRightStyle();
             SetRightFont();
@@ -77,7 +77,7 @@ namespace SHKOLA
                 return false;
 
             if (examMode)
-                userAnswers.Add(new Excercise(baseCtrl.Text));
+                userAnswers.Add(new Answer(baseCtrl.Text));
             return examMode ? true : baseCtrl.Text == (curExercise.ToString());
         }
 
@@ -133,7 +133,7 @@ namespace SHKOLA
             }
         }
 
-        public List<Excercise> getUserAnswersList()
+        public List<Answer> getUserAnswersList()
         {
             return userAnswers;
         }
