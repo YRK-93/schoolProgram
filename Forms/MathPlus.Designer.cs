@@ -232,6 +232,7 @@
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn0);
             this.DoubleBuffered = true;
+            this.Icon = global::SHKOLA.Properties.Resources.AppIcon;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "MathPlus";
