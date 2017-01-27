@@ -43,15 +43,14 @@ namespace SHKOLA
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MathSelectModeView.OnMathPlusClicked();
+            MathSelectModeView.OnMathPlusClicked(MathWindowMode.mmPlusMinusTraining);
             this.Show();
         }
 
         private void btnPlusExam_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MathPlusView.EnableExamMode();
-            MathSelectModeView.OnMathPlusClicked();
+            MathSelectModeView.OnMathPlusClicked(MathWindowMode.mmPlusMinusExam);
             this.Show();
         }
     }

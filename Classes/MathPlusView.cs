@@ -3,49 +3,73 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using SHKOLA.Properties;
 
 namespace SHKOLA
 {
-    class MathPlusView : BaseView
+    partial class MathPlus
     {
-        static Blackboard mathBoard;
-        static ResultMessage resMessage;
-        static bool examMode;
+        Blackboard mathBoard;
+        ResultMessage resMessage;
+        bool examMode;
+        List<WinElement> controlsList;
 
-        static public void AddBoard(Blackboard brd)
+        public MathPlus(MathWindowMode winMode)
         {
-            if (brd != null)
+            InitializeComponent();
+            applieWinMode(winMode);
+
+            // Initialization
+            AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, Resources.btnNext, this));
+            AddElement(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, Resources.btnBack, this));
+            HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.8f, 0.06f, 0.62f, 0.1f, HorizPanelAlign.hEvenly);
+            btnsPane.AddButtonOnPane(ref btn0, Resources.digit0);
+            btnsPane.AddButtonOnPane(ref btn1, Resources.digit1);
+            btnsPane.AddButtonOnPane(ref btn2, Resources.digit2);
+            btnsPane.AddButtonOnPane(ref btn3, Resources.digit3);
+            btnsPane.AddButtonOnPane(ref btn4, Resources.digit4);
+            btnsPane.AddButtonOnPane(ref btn5, Resources.digit5);
+            btnsPane.AddButtonOnPane(ref btn6, Resources.digit6);
+            btnsPane.AddButtonOnPane(ref btn7, Resources.digit7);
+            btnsPane.AddButtonOnPane(ref btn8, Resources.digit8);
+            btnsPane.AddButtonOnPane(ref btn9, Resources.digit9);
+            btnsPane.AddButtonOnPane(ref btnErase, Resources.btnErase);
+            AddElement(btnsPane);
+            AddElement(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.685f, 0.3f, 0.3f));
+
+            mathBoard = new Blackboard(examMode, ref btnBoard, 0.5f, 0.06f, 0.62f, 200.0f, Resources.paper, this);
+            AddElement(mathBoard);
+
+            resMessage = new ResultMessage(ref btnMsg, AppConstants.topButtonMarginKoef, 0.4f, 0.3f, 0.12f, this);
+            AddElement(resMessage);
+        }
+
+        private void applieWinMode(MathWindowMode winMode)
+        {
+            switch (winMode)
             {
-                mathBoard = brd;
-                AddElement(brd);
+                case MathWindowMode.mmPlusMinusExam: examMode = true; break;
+                case MathWindowMode.mmPlusMinusTraining: examMode = false; break;
             }
         }
 
-        static public void AddResultMessage(ResultMessage rmsg)
+        void AddElement(WinElement wElement)
         {
-            if (rmsg != null)
-            {
-                resMessage = rmsg;
-                AddElement(rmsg);
-            }
+            if (controlsList == null)
+                controlsList = new List<WinElement>();
+
+            if (wElement != null)
+                controlsList.Add(wElement);
         }
 
-        static public void EnableExamMode()
+        void Actualize()
         {
-            examMode = true;
+            if (controlsList != null)
+                foreach (WinElement wElem in controlsList)
+                    wElem.OnUpdate(this);
         }
 
-        static public void DisableExamMode()
-        {
-            examMode = false;
-        }
-
-        static public bool isExamMode()
-        {
-            return examMode;
-        }
-
-        static public bool OnNextClicked()
+        public void OnNextClicked()
         {
             if (mathBoard.isAnswerRight())
             {
@@ -57,21 +81,18 @@ namespace SHKOLA
                 {
                     ExamResults er = new ExamResults(mathBoard.getUserAnswersList());
                     er.ShowDialog();
-                    DisableExamMode();
-                    return false;
+                    this.Close(); // Close form MathPlus, when form with examination results will closed
                 }
             }
             else if (!examMode)
                 resMessage.ShowWrong();
-            return true;
         }
 
-        static public void ProcessKey(Keys key)
+        public void ProcessKey(Keys key)
         {
             mathBoard.ProcessButtonClick(key);
 
-            if (key == Keys.Enter)
-                OnNextClicked();
+            // In the other case if space or enter pressed, next button automatically will clicked, because of focus
         }
     }
 }
