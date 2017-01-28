@@ -41,18 +41,36 @@ namespace SHKOLA
             return new Excercise(aa.ToString() + znak + bb.ToString() + " = ", result.ToString());
         }
 
-        public static List<Excercise> GenPlusMinusExamExercises(uint num)
+        public static List<Excercise> GenPlusMinusExamExercises(bool isMultiply)
         {
+            uint num = Settings.Default.MathExamQuestionsCount;
             List<Excercise> excList = new List<Excercise>();
 
             while(excList.Count < num)
             {
-                Excercise buf = GenPlusMinusExercise();
+                Excercise buf = isMultiply ? GenMultiplTabExcercise() : GenPlusMinusExercise();
 
                 if (!excList.Contains(buf))
                     excList.Add(buf);
             }
             return excList;
+        }
+
+        public static Excercise GenMultiplTabExcercise()
+        {
+            List<int> operandsList = new List<int>();
+
+            string muliplValuesStr = Settings.Default.MathMultTableUse;
+            for(int i = 1; i < 10; i++)
+                if (muliplValuesStr.Contains(i.ToString()))
+                    operandsList.Add(i);
+
+            Random rnd = new Random();
+            int aa = operandsList[rnd.Next(operandsList.Count)];
+            int bb = 1 + rnd.Next(8);
+            int res = aa * bb;
+
+            return new Excercise(aa.ToString() + " x " + bb.ToString() + " = ", res.ToString());
         }
     }
 }

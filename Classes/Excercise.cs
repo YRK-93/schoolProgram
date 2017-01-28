@@ -96,7 +96,7 @@ namespace SHKOLA
             if (opration == "-")
                 return (a - b) == r;
 
-            if (opration == "*")
+            if (opration == "x")
                 return (a * b) == r;
 
             return false;

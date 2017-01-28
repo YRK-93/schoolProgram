@@ -11,7 +11,7 @@ namespace SHKOLA
     {
         Blackboard mathBoard;
         ResultMessage resMessage;
-        bool examMode;
+        bool examMode, multiplyMode;
         List<WinElement> controlsList;
 
         public MathPlus(MathWindowMode winMode)
@@ -38,7 +38,7 @@ namespace SHKOLA
             controlsList.Add(btnsPane);
             controlsList.Add(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.685f, 0.3f, 0.3f));
 
-            mathBoard = new Blackboard(examMode, ref btnBoard, 0.5f, 0.06f, 0.62f, 200.0f, Resources.paper, this);
+            mathBoard = new Blackboard(examMode, multiplyMode, ref btnBoard, 0.5f, 0.06f, 0.62f, 200.0f, Resources.paper, this);
             controlsList.Add(mathBoard);
 
             resMessage = new ResultMessage(ref btnMsg, AppConstants.topButtonMarginKoef, 0.4f, 0.3f, 0.12f, this);
@@ -49,8 +49,10 @@ namespace SHKOLA
         {
             switch (winMode)
             {
-                case MathWindowMode.mmPlusMinusExam: examMode = true; break;
-                case MathWindowMode.mmPlusMinusTraining: examMode = false; break;
+                case MathWindowMode.mmPlusMinusExam: { examMode = true; multiplyMode = false; break; }
+                case MathWindowMode.mmPlusMinusTraining: { examMode = false; multiplyMode = false; break; }
+                case MathWindowMode.mmMultiplyTraining: { examMode = false; multiplyMode = true; break; }
+                case MathWindowMode.mmMultiplyExam: { examMode = true; multiplyMode = true; break; }
             }
         }
 

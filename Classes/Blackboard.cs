@@ -13,14 +13,15 @@ namespace SHKOLA
         List<Excercise> execrisesList;
         Excercise curExercise;
         List<Answer> userAnswers;
-        bool examMode;
+        bool examMode, isMultiplyMode;
         float fontSize; // 93 x 71
         int currentExcNum;
 
-        public Blackboard(bool isExamMode, ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form cParent = null):
+        public Blackboard(bool isExamMode, bool isMultMode, ref Button controlFounder, float topR, float leftR, float widthR, float heightR, Image backImg, Form cParent = null):
             base(ref controlFounder, topR, leftR, widthR, heightR, backImg, cParent)
         {
             examMode = isExamMode;
+            isMultiplyMode = isMultMode;
             baseCtrl = controlFounder;
             topRatio = topR;
             leftRatio = leftR;
@@ -29,12 +30,7 @@ namespace SHKOLA
             currentExcNum = -1;
 
             if (examMode)
-                execrisesList = ExerciseGenerator.GenPlusMinusExamExercises(Settings.Default.MathExamQuestionsCount);
-            else
-            {
-                execrisesList = new List<Excercise>();
-                execrisesList.Add(ExerciseGenerator.GenPlusMinusExercise());
-            }
+                execrisesList = ExerciseGenerator.GenPlusMinusExamExercises(isMultiplyMode);
 
             userAnswers = new List<Answer>();
             
@@ -58,7 +54,7 @@ namespace SHKOLA
                 curExercise = execrisesList[currentExcNum];
             }
             else 
-                curExercise = ExerciseGenerator.GenPlusMinusExercise();
+                curExercise = isMultiplyMode ? ExerciseGenerator.GenMultiplTabExcercise() : ExerciseGenerator.GenPlusMinusExercise();
         }
 
         public void ShowNextExercise()

@@ -31,5 +31,15 @@ namespace SHKOLA
         {
             OnMathModeSelected(MathWindowMode.mmPlusMinusExam);
         }
+
+        private void btnMulTraining_Click(object sender, EventArgs e)
+        {
+            OnMathModeSelected(MathWindowMode.mmMultiplyTraining);
+        }
+
+        private void btnMulExam_Click(object sender, EventArgs e)
+        {
+            OnMathModeSelected(MathWindowMode.mmMultiplyExam);
+        }
     }
 }

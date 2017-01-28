@@ -30,6 +30,8 @@
         {
             this.btnPlus = new System.Windows.Forms.Button();
             this.btnPlusExam = new System.Windows.Forms.Button();
+            this.btnMulTraining = new System.Windows.Forms.Button();
+            this.btnMulExam = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPlus
@@ -52,6 +54,26 @@
             this.btnPlusExam.UseVisualStyleBackColor = true;
             this.btnPlusExam.Click += new System.EventHandler(this.btnPlusExam_Click);
             // 
+            // btnMulTraining
+            // 
+            this.btnMulTraining.Location = new System.Drawing.Point(337, 105);
+            this.btnMulTraining.Name = "btnMulTraining";
+            this.btnMulTraining.Size = new System.Drawing.Size(75, 23);
+            this.btnMulTraining.TabIndex = 3;
+            this.btnMulTraining.Text = "Mult training";
+            this.btnMulTraining.UseVisualStyleBackColor = true;
+            this.btnMulTraining.Click += new System.EventHandler(this.btnMulTraining_Click);
+            // 
+            // btnMulExam
+            // 
+            this.btnMulExam.Location = new System.Drawing.Point(337, 134);
+            this.btnMulExam.Name = "btnMulExam";
+            this.btnMulExam.Size = new System.Drawing.Size(75, 23);
+            this.btnMulExam.TabIndex = 4;
+            this.btnMulExam.Text = "Mult exam";
+            this.btnMulExam.UseVisualStyleBackColor = true;
+            this.btnMulExam.Click += new System.EventHandler(this.btnMulExam_Click);
+            // 
             // MathSelectMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -59,6 +81,8 @@
             this.BackgroundImage = global::SHKOLA.Properties.Resources.mathModeBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(849, 581);
+            this.Controls.Add(this.btnMulExam);
+            this.Controls.Add(this.btnMulTraining);
             this.Controls.Add(this.btnPlusExam);
             this.Controls.Add(this.btnPlus);
             this.DoubleBuffered = true;
@@ -79,5 +103,7 @@
 
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Button btnPlusExam;
+        private System.Windows.Forms.Button btnMulTraining;
+        private System.Windows.Forms.Button btnMulExam;
     }
 }
