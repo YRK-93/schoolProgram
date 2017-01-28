@@ -20,8 +20,9 @@ namespace SHKOLA
             applieWinMode(winMode);
 
             // Initialization
-            AddElement(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, Resources.btnNext, this));
-            AddElement(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, Resources.btnBack, this));
+            controlsList = new List<WinElement>();
+            controlsList.Add(new ButtonControl(ref this.btnNext, AppConstants.topButtonMarginKoef, (0.9f - AppConstants.topButtonMarginKoef), 0.1f, 0.12f, Resources.btnNext, this));
+            controlsList.Add(new ButtonControl(ref this.btnBack, AppConstants.topButtonMarginKoef, AppConstants.topButtonMarginKoef, 0.1f, 0.12f, Resources.btnBack, this));
             HorizontalButtonsPane btnsPane = new HorizontalButtonsPane(this, 0.8f, 0.06f, 0.62f, 0.1f, HorizPanelAlign.hEvenly);
             btnsPane.AddButtonOnPane(ref btn0, Resources.digit0);
             btnsPane.AddButtonOnPane(ref btn1, Resources.digit1);
@@ -34,14 +35,14 @@ namespace SHKOLA
             btnsPane.AddButtonOnPane(ref btn8, Resources.digit8);
             btnsPane.AddButtonOnPane(ref btn9, Resources.digit9);
             btnsPane.AddButtonOnPane(ref btnErase, Resources.btnErase);
-            AddElement(btnsPane);
-            AddElement(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.685f, 0.3f, 0.3f));
+            controlsList.Add(btnsPane);
+            controlsList.Add(new Companion(this, ref btnPigCompanion, Resources.belka, 0.6f, 0.685f, 0.3f, 0.3f));
 
             mathBoard = new Blackboard(examMode, ref btnBoard, 0.5f, 0.06f, 0.62f, 200.0f, Resources.paper, this);
-            AddElement(mathBoard);
+            controlsList.Add(mathBoard);
 
             resMessage = new ResultMessage(ref btnMsg, AppConstants.topButtonMarginKoef, 0.4f, 0.3f, 0.12f, this);
-            AddElement(resMessage);
+            controlsList.Add(resMessage);
         }
 
         private void applieWinMode(MathWindowMode winMode)
@@ -51,15 +52,6 @@ namespace SHKOLA
                 case MathWindowMode.mmPlusMinusExam: examMode = true; break;
                 case MathWindowMode.mmPlusMinusTraining: examMode = false; break;
             }
-        }
-
-        void AddElement(WinElement wElement)
-        {
-            if (controlsList == null)
-                controlsList = new List<WinElement>();
-
-            if (wElement != null)
-                controlsList.Add(wElement);
         }
 
         void Actualize()
