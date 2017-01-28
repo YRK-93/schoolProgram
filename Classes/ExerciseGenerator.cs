@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SHKOLA.Properties;
 
 namespace SHKOLA
 {
@@ -9,31 +10,38 @@ namespace SHKOLA
     {
         public static Excercise GenPlusMinusExercise()
         {
-            int maxValue = 20;
-            Random r = new Random();
-            int aa = r.Next(0, maxValue);
-            int bb = r.Next(0, maxValue);
-            int zn = r.Next(0, maxValue);
+            int maxValue = Convert.ToInt32(Settings.Default.MathMaxOperandValue);
+            int maxResultValue = Convert.ToInt32(Settings.Default.MathMaxResultValue);
+            int aa, bb, zn, result = 0;
+            string znak;
 
-            string znak = (zn % 2 == 0) ? " + " : " - ";
-
-            int result;
-            if (znak == " - ")
+            do
             {
-                if (aa < bb)
+                Random r = new Random();
+                aa = r.Next(0, maxValue + 1);
+                bb = r.Next(0, maxValue + 1);
+                zn = r.Next(0, maxValue + 1);
+
+                znak = (zn % 2 == 0) ? " + " : " - ";
+
+                if (znak == " - ")
                 {
-                    int cc = bb;
-                    bb = aa;
-                    aa = cc;
+                    if (aa < bb)
+                    {
+                        int cc = bb;
+                        bb = aa;
+                        aa = cc;
+                    }
+                    result = aa - bb;
                 }
-                result = aa - bb;
+                else result = aa + bb;
             }
-            else result = aa + bb;
+            while (result > maxResultValue);
 
             return new Excercise(aa.ToString() + znak + bb.ToString() + " = ", result.ToString());
         }
 
-        public static List<Excercise> GenPlusMinusExamExercises(int num)
+        public static List<Excercise> GenPlusMinusExamExercises(uint num)
         {
             List<Excercise> excList = new List<Excercise>();
 

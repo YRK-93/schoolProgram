@@ -29,18 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnMath = new System.Windows.Forms.Button();
+            this.btnOptions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnMath
             // 
-            this.button1.Location = new System.Drawing.Point(359, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(307, 120);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnMath.Location = new System.Drawing.Point(359, 142);
+            this.btnMath.Name = "btnMath";
+            this.btnMath.Size = new System.Drawing.Size(307, 120);
+            this.btnMath.TabIndex = 1;
+            this.btnMath.Text = "MATH";
+            this.btnMath.UseVisualStyleBackColor = true;
+            this.btnMath.Click += new System.EventHandler(this.btnMath_Click);
+            // 
+            // btnOptions
+            // 
+            this.btnOptions.Location = new System.Drawing.Point(1051, 604);
+            this.btnOptions.Name = "btnOptions";
+            this.btnOptions.Size = new System.Drawing.Size(75, 23);
+            this.btnOptions.TabIndex = 2;
+            this.btnOptions.Text = "Settings";
+            this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // MainForm
             // 
@@ -49,7 +60,8 @@
             this.BackgroundImage = global::SHKOLA.Properties.Resources.mBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1150, 650);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOptions);
+            this.Controls.Add(this.btnMath);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -67,7 +79,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnMath;
+        private System.Windows.Forms.Button btnOptions;
     }
 }
 

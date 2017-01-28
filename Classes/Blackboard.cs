@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using SHKOLA.Properties;
 
 namespace SHKOLA
 {
@@ -28,7 +29,7 @@ namespace SHKOLA
             currentExcNum = -1;
 
             if (examMode)
-                execrisesList = ExerciseGenerator.GenPlusMinusExamExercises(AppConstants.examinationQuestionsCount);
+                execrisesList = ExerciseGenerator.GenPlusMinusExamExercises(Settings.Default.MathExamQuestionsCount);
             else
             {
                 execrisesList = new List<Excercise>();

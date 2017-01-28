@@ -22,9 +22,14 @@ namespace SHKOLA
             Actualize();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnMath_Click(object sender, EventArgs e)
         {
             OnMathClicked();
+        }
+
+        private void btnOptions_Click(object sender, EventArgs e)
+        {
+            OnOptionsCliked();
         }
     }
 }

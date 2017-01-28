@@ -60,7 +60,10 @@ namespace SHKOLA
             OnUpdate((Form)baseCtrl.Parent);
             baseCtrl.Show();
             baseCtrl.Update();
-            snd.Play();
+
+            if (Settings.Default.SoundEnabled)
+                snd.Play();
+
             Thread.Sleep(600);
             baseCtrl.Hide();
         }

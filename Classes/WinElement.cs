@@ -21,7 +21,10 @@ namespace SHKOLA
             baseCtrl.Top = (topRatio < 1.0f) ? (int)(updForm.Height * topRatio) : Convert.ToInt32(topRatio);
             baseCtrl.Left = (leftRatio < 1.0f) ? (int)(updForm.Width * leftRatio) : Convert.ToInt32(leftRatio);
             baseCtrl.Width = (widthRatio < 1.0f) ? (int)(updForm.Width * widthRatio) : Convert.ToInt32(widthRatio);
-            baseCtrl.Height = (heightRatio < 1.0f) ? (int)(updForm.Height * heightRatio) : Convert.ToInt32(heightRatio);
+            if (heightRatio == -1.0f)
+                baseCtrl.Height = baseCtrl.Width;
+            else 
+                baseCtrl.Height = (heightRatio < 1.0f) ? (int)(updForm.Height * heightRatio) : Convert.ToInt32(heightRatio);
         }
     }
 }
