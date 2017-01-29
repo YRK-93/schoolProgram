@@ -53,7 +53,14 @@ namespace SHKOLA
         private void Answer(bool isRight)
         {
             var snd = isRight ? System.Media.SystemSounds.Asterisk : System.Media.SystemSounds.Hand;
-            baseCtrl.Text = isRight ? "ПРАВИЛЬНО" : "НЕПРАВИЛЬНО";
+
+            // Choose necessary message text, according to current language
+            if (isRight)
+                baseCtrl.Text = (Settings.Default.AppLanguage == "ru") ? Resources.msgRightRU : Resources.msgRightBY;
+            else
+                baseCtrl.Text = (Settings.Default.AppLanguage == "ru") ? Resources.msgWrongRU : Resources.msgWrongBY;
+
+            // Choose necessary background image
             baseCtrl.BackgroundImage = isRight ? Resources.resMsgGr : Resources.resMsgRd;
  
             SetRightStyle();

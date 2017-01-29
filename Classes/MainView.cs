@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using SHKOLA.Properties;
+using System.Drawing;
 
 namespace SHKOLA
 {
@@ -16,9 +17,12 @@ namespace SHKOLA
             InitializeComponent();
 
             // Initialization
+            Font fnt = new Font("Arial", 45.0f, FontStyle.Bold);
+            btnMath.ForeColor = Color.White;
+            string mathStr = (Settings.Default.AppLanguage == "ru") ? Resources.mathRU : Resources.mathBY;
             controlsList = new List<WinElement>();
-            controlsList.Add(new ButtonControl(ref this.btnMath, 0.2f, 0.3f, 0.4f, 0.16f, Resources.btnMathG, this));
-            controlsList.Add(new ButtonControl(ref this.btnOptions, 0.81f, 0.5f, 0.08f, -1.0f, Resources.btnSettings, this));
+            controlsList.Add(new ButtonControl(ref this.btnMath, 0.2f, 0.3f, 600.0f, 80.0f, Resources.plusG, this, mathStr, fnt));
+            controlsList.Add(new ButtonControl(ref this.btnOptions, 0.81f, 0.5f, 120.0f, -1.0f, Resources.btnSettings, this));
         }
 
         public void Actualize()
@@ -40,6 +44,7 @@ namespace SHKOLA
         {
             var winOptions = new Options();
             winOptions.ShowDialog();
+            this.Update();
         }
     }
 }

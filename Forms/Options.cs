@@ -40,6 +40,10 @@ namespace SHKOLA
             numericMaxPlusValue.Value = Settings.Default.MathMaxOperandValue;
             numericMaxPlusResult.Value = Settings.Default.MathMaxResultValue;
             SetMultTableValues(Settings.Default.MathMultTableUse);
+            if (Settings.Default.AppLanguage == "ru")
+                comboBox1.SelectedIndex = 0;
+            else
+                comboBox1.SelectedIndex = 1;
         }
 
         void SetMultTableValues(string values)
@@ -104,11 +108,22 @@ namespace SHKOLA
             return true;
         }
 
+        string GetSelectedLanguage()
+        {
+            if (comboBox1.SelectedIndex == 0)
+                return "ru";
+
+            if (comboBox1.SelectedIndex == 0)
+                return "by";
+            return "by";
+        }
+
         void OnSaveOptionsClicked()
         {
             if (valuesCorrect())
             {
                 Settings.Default.SoundEnabled = checkBoxSound.Checked;
+                Settings.Default.AppLanguage = GetSelectedLanguage();
                 Settings.Default.MathExamQuestionsCount = Convert.ToUInt32(numericExamQuestionsCount.Value);
                 Settings.Default.MathMaxOperandValue  = Convert.ToUInt32(numericMaxPlusValue.Value);
                 Settings.Default.MathMaxResultValue = Convert.ToUInt32(numericMaxPlusResult.Value);

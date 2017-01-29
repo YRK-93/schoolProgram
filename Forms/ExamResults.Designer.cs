@@ -64,7 +64,7 @@
             this.label1.ForeColor = System.Drawing.Color.Purple;
             this.label1.Location = new System.Drawing.Point(100, -7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(387, 194);
+            this.label1.Size = new System.Drawing.Size(387, 205);
             this.label1.TabIndex = 2;
             this.label1.Text = "Results";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

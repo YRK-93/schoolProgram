@@ -47,7 +47,8 @@ namespace SHKOLA
 
         private void ExamResults_Load(object sender, EventArgs e)
         {
-            label1.Text = "Результаты \nпроверки \nзнаний";
+            string someStr = (Settings.Default.AppLanguage == "ru") ? Resources.examResultsLabelRU : Resources.examResultsLabelBY;
+            label1.Text = someStr.Replace(' ', '\n');
 
             btnAccept.OnUpdate(this);
 
@@ -55,9 +56,14 @@ namespace SHKOLA
             int rightAnswersCount = getRightAnswersCount();
             int wrongAnswersCount = excercisesSolved - rightAnswersCount;
 
-            richTextBox1.Text = "Решено примеров: " + excercisesSolved.ToString();
-            richTextBox1.Text = richTextBox1.Text + "\nПравильных ответов: " + rightAnswersCount.ToString();
-            richTextBox1.Text = richTextBox1.Text + "\nОшибок: " + wrongAnswersCount.ToString();
+            richTextBox1.Text = (Settings.Default.AppLanguage == "ru") ? Resources.examQustionsSolvedRU : Resources.examQustionsSolvedBY;
+            richTextBox1.Text += ": " + excercisesSolved.ToString();
+            richTextBox1.Text = richTextBox1.Text + "\n";
+            richTextBox1.Text += (Settings.Default.AppLanguage == "ru") ? Resources.examRightAnswersRU : Resources.examRightAnswersBY;
+            richTextBox1.Text += ": " + rightAnswersCount.ToString();
+            richTextBox1.Text += "\n";
+            richTextBox1.Text += (Settings.Default.AppLanguage == "ru") ? Resources.examMistakesRU : Resources.examMistakesBY;
+            richTextBox1.Text += ": " + wrongAnswersCount.ToString();
 
             printExcersices();
         }
