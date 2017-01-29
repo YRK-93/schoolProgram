@@ -41,5 +41,10 @@ namespace SHKOLA
         {
             OnMathModeSelected(MathWindowMode.mmMultiplyExam);
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            OnBackButtonClicked();
+        }
     }
 }

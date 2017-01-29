@@ -32,6 +32,7 @@
             this.btnPlusExam = new System.Windows.Forms.Button();
             this.btnMulTraining = new System.Windows.Forms.Button();
             this.btnMulExam = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnPlus
@@ -74,6 +75,16 @@
             this.btnMulExam.UseVisualStyleBackColor = true;
             this.btnMulExam.Click += new System.EventHandler(this.btnMulExam_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(13, 13);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 23);
+            this.btnBack.TabIndex = 5;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // MathSelectMode
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -81,6 +92,7 @@
             this.BackgroundImage = global::SHKOLA.Properties.Resources.mathModeBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(849, 581);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnMulExam);
             this.Controls.Add(this.btnMulTraining);
             this.Controls.Add(this.btnPlusExam);
@@ -105,5 +117,6 @@
         private System.Windows.Forms.Button btnPlusExam;
         private System.Windows.Forms.Button btnMulTraining;
         private System.Windows.Forms.Button btnMulExam;
+        private System.Windows.Forms.Button btnBack;
     }
 }
