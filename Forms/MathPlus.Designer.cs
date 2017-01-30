@@ -232,12 +232,14 @@
             this.Controls.Add(this.btn1);
             this.Controls.Add(this.btn0);
             this.DoubleBuffered = true;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = global::SHKOLA.Properties.Resources.AppIcon;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "MathPlus";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MathPlus";
+            this.Text = "SchoolProgram";
+            this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MathPlus_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.MathPlus_KeyUp);

@@ -52,7 +52,7 @@
             this.btnOk.Location = new System.Drawing.Point(456, 416);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
-            this.btnOk.TabIndex = 1;
+            this.btnOk.TabIndex = 100;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
@@ -71,7 +71,6 @@
             // 
             // ExamResults
             // 
-            this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SHKOLA.Properties.Resources.bckgResults;
@@ -81,13 +80,15 @@
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.richTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = global::SHKOLA.Properties.Resources.AppIcon;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ExamResults";
+            this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ExamResults";
+            this.Text = SHKOLA.Properties.Resources.applicationName;
             this.TopMost = true;
             this.Load += new System.EventHandler(this.ExamResults_Load);
             this.ResumeLayout(false);

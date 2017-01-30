@@ -38,13 +38,16 @@ namespace SHKOLA
             var mathForm = new MathSelectMode();
             mathForm.ShowDialog();
             this.Show();
+            this.BringToFront();
         }
 
         public void OnOptionsCliked()
         {
             var winOptions = new Options();
-            winOptions.ShowDialog();
-            this.Update();
+            var dResult = winOptions.ShowDialog();
+
+            this.btnMath.Text = (Settings.Default.AppLanguage == "ru") ? Resources.mathRU : Resources.mathBY;
+            this.btnMath.Update();
         }
     }
 }

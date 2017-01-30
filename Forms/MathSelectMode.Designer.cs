@@ -92,6 +92,7 @@
             this.BackgroundImage = global::SHKOLA.Properties.Resources.mathModeBackground;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(849, 581);
+            this.ControlBox = false;
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnMulExam);
             this.Controls.Add(this.btnMulTraining);
@@ -99,10 +100,12 @@
             this.Controls.Add(this.btnPlus);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = global::SHKOLA.Properties.Resources.AppIcon;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MathSelectMode";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "MathSelectMode";
+            this.Text = "SchoolProgram";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.MathSelectMode_Load);

@@ -63,12 +63,13 @@
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnMath);
             this.DoubleBuffered = true;
+            this.Icon = global::SHKOLA.Properties.Resources.AppIcon;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ШКОЛА";
+            this.Text = SHKOLA.Properties.Resources.applicationName;
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -72,7 +72,7 @@
             this.tabOptions.Location = new System.Drawing.Point(13, 13);
             this.tabOptions.Name = "tabOptions";
             this.tabOptions.SelectedIndex = 0;
-            this.tabOptions.Size = new System.Drawing.Size(808, 446);
+            this.tabOptions.Size = new System.Drawing.Size(534, 446);
             this.tabOptions.TabIndex = 0;
             // 
             // tabMainSettings
@@ -83,7 +83,7 @@
             this.tabMainSettings.Location = new System.Drawing.Point(4, 22);
             this.tabMainSettings.Name = "tabMainSettings";
             this.tabMainSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMainSettings.Size = new System.Drawing.Size(800, 420);
+            this.tabMainSettings.Size = new System.Drawing.Size(526, 420);
             this.tabMainSettings.TabIndex = 0;
             this.tabMainSettings.Text = "Основные настройки";
             this.tabMainSettings.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@
             this.tabMathSettings.Location = new System.Drawing.Point(4, 22);
             this.tabMathSettings.Name = "tabMathSettings";
             this.tabMathSettings.Padding = new System.Windows.Forms.Padding(3);
-            this.tabMathSettings.Size = new System.Drawing.Size(800, 420);
+            this.tabMathSettings.Size = new System.Drawing.Size(526, 420);
             this.tabMathSettings.TabIndex = 1;
             this.tabMathSettings.Text = "Математика";
             this.tabMathSettings.UseVisualStyleBackColor = true;
@@ -348,7 +348,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(665, 465);
+            this.btnSave.Location = new System.Drawing.Point(387, 465);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 1;
@@ -358,7 +358,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(746, 465);
+            this.btnCancel.Location = new System.Drawing.Point(468, 465);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 2;
@@ -370,12 +370,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 500);
+            this.ClientSize = new System.Drawing.Size(555, 500);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabOptions);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = global::SHKOLA.Properties.Resources.AppIcon;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Options";
-            this.Text = "Options";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Text = "SchoolProgram";
             this.Load += new System.EventHandler(this.Options_Load);
             this.tabOptions.ResumeLayout(false);
             this.tabMainSettings.ResumeLayout(false);

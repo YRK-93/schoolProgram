@@ -71,6 +71,15 @@ namespace SHKOLA.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на SchoolProgram.
+        /// </summary>
+        public static string applicationName {
+            get {
+                return ResourceManager.GetString("applicationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         public static System.Drawing.Bitmap bckgResults {

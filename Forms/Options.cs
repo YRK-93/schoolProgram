@@ -130,7 +130,6 @@ namespace SHKOLA
                 Settings.Default.MathMultTableUse = GetMultTableValues();
 
                 Settings.Default.Save();
-
                 this.Close();
             }
 
