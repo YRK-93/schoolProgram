@@ -44,7 +44,7 @@ namespace SHKOLA
         public void OnOptionsCliked()
         {
             var winOptions = new Options();
-            var dResult = winOptions.ShowDialog();
+            winOptions.ShowDialog();
 
             this.btnMath.Text = (Settings.Default.AppLanguage == "ru") ? Resources.mathRU : Resources.mathBY;
             this.btnMath.Update();
