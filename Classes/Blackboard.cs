@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Drawing;
-using SHKOLA.Properties;
 
 namespace SHKOLA
 {
@@ -49,7 +45,7 @@ namespace SHKOLA
         {
             if (examMode)
             {
-                if (examMode && curExercise != execrisesList.Last())
+                if (examMode && curExercise != execrisesList[execrisesList.Count - 1])
                     currentExcNum++;
                 curExercise = execrisesList[currentExcNum];
             }
@@ -65,7 +61,7 @@ namespace SHKOLA
 
         public bool isExcerciseLeft()
         {
-            return !(examMode && curExercise == execrisesList.Last());
+            return !(examMode && curExercise == execrisesList[execrisesList.Count - 1]);
         }
 
         public bool isAnswerRight()

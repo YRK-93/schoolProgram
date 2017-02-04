@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using SHKOLA.Properties;
 
@@ -48,15 +42,15 @@ namespace SHKOLA
 
         void SetMultTableValues(string values)
         {
-            checkBox1.Checked = values.Contains('1');
-            checkBox2.Checked = values.Contains('2');
-            checkBox3.Checked = values.Contains('3');
-            checkBox4.Checked = values.Contains('4');
-            checkBox5.Checked = values.Contains('5');
-            checkBox6.Checked = values.Contains('6');
-            checkBox7.Checked = values.Contains('7');
-            checkBox8.Checked = values.Contains('8');
-            checkBox9.Checked = values.Contains('9');
+            checkBox1.Checked = values.Contains("1");
+            checkBox2.Checked = values.Contains("2");
+            checkBox3.Checked = values.Contains("3");
+            checkBox4.Checked = values.Contains("4");
+            checkBox5.Checked = values.Contains("5");
+            checkBox6.Checked = values.Contains("6");
+            checkBox7.Checked = values.Contains("7");
+            checkBox8.Checked = values.Contains("8");
+            checkBox9.Checked = values.Contains("9");
         }
 
         string GetMultTableValues()
